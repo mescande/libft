@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 19:40:50 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/02 19:54:37 by mescande         ###   ########.fr       */
+/*   Created: 2019/04/03 11:15:53 by mescande          #+#    #+#             */
+/*   Updated: 2019/04/03 11:18:09 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char *ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
+char	*strchr(const char *s, int c)
 {
-	size_t i, j;
+	size_t	pos;
+	char	lfi;
 
-	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
-		i++;
-	while (s2[j] != '\0' && j <)
+	lfi = (char) c;
+	while (s[pos] != '\0')
+		pos++;
+	while (pos != 0)
 	{
-		s1[i + j] == s2[j];
-		j++;
+		if (s[pos] == lfi)
+			return (s + pos);
+		pos--;
 	}
-	return (s1);
+	if (pos == 0 && s[pos] == lfi)
+		return s;
+	return (0);
 }
