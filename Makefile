@@ -6,7 +6,7 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2019/04/04 19:22:18 by mescande         ###   ########.fr        #
+#    Updated: 2019/04/04 20:04:33 by mescande         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,16 +56,16 @@ DIR = $(sort $(dir $(OBJ)))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $^ -o $@
+	@$(CC) $(FLAGS) $^ -o $@
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(DIR)
 	@$(CC) $(FLAGS) -MMD -c $< -o $@ -I $(INC_DIR)
 
 $(DIR):
-	mkdir -p $@
+	@mkdir -p $@
 
 clean:
-	rm -rf $(OBJ_DIR)
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
 	@rm -rf $(NAME)
