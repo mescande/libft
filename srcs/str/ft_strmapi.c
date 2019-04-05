@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/04 16:12:07 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/05 11:26:35 by mescande         ###   ########.fr       */
+/*   Created: 2019/04/05 14:51:17 by mescande          #+#    #+#             */
+/*   Updated: 2019/04/05 14:55:22 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		main(void)
+#include "libft.h"
+
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	return (0);
+	size_t	len;
+	char	*res;
+
+	len = 0;
+	res = ft_strnew(ft_strlen(s))
+	while (s[len] != '\0')
+	{
+		res[len] = f(len, s[len]);
+		len++;
+	}
+	return (res);
 }

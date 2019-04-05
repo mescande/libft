@@ -6,7 +6,7 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2019/04/04 20:04:33 by mescande         ###   ########.fr        #
+#    Updated: 2019/04/05 19:20:12 by mescande         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,26 +26,51 @@ SRC_LIST = main.c\
 		   chr/ft_tolower.c\
 		   chr/ft_toupper.c\
 		   mem/ft_bzero.c\
+		   mem/ft_memalloc.c\
 		   mem/ft_memccpy.c\
 		   mem/ft_memchr.c\
 		   mem/ft_memcmp.c\
 		   mem/ft_memcpy.c\
+		   mem/ft_memdel.c
 		   mem/ft_memmove.c\
 		   mem/ft_memset.c\
+		   put/ft_putchar.c\
+		   put/ft_putchar_fd.c\
+		   put/ft_putendl.c\
+		   put/ft_putendl_fd.c\
+		   put/ft_putnbr.c\
+		   put/ft_putnbr_fd.c\
+		   put/ft_putstr.c\
+		   put/ft_putstr_fd.c\
 		   str/ft_atoi.c\
+		   str/ft_itoa.c\
 		   str/ft_strcat.c\
 		   str/ft_strchr.c\
+		   str/ft_strclr.c\
 		   str/ft_strcmp.c\
 		   str/ft_strcpy.c\
+		   str/ft_strdel.c\
 		   str/ft_strdup.c\
+		   str/ft_strequ.c\
+		   str/ft_striter.c\
+		   str/ft_striteri.c\
+		   str/ft_strjoin.c\
 		   str/ft_strlcat.c\
 		   str/ft_strlen.c\
+		   str/ft_strmap.c\
+		   str/ft_strmapi.c\
 		   str/ft_strncat.c\
 		   str/ft_strncmp.c\
 		   str/ft_strncpy.c\
+		   str/ft_strnequ.c\
+		   str/ft_strnew.c\
 		   str/ft_strnstr.c\
+		   str/ft_strsplit.c\
 		   str/ft_strrchr.c\
-		   str/ft_strstr.c
+		   str/ft_strstr.c\
+		   str/ft_strsub.c\
+		   str/ft_strtok.c\
+		   str/ft_strtrim.c
 		   
 SRC = $(addprefix $(SRC_DIR), $(SRC_LIST))
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_LIST:.c=.o))

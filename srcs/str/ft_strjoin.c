@@ -1,16 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/04 16:12:07 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/05 11:26:35 by mescande         ###   ########.fr       */
+/*   Created: 2019/04/05 15:25:56 by mescande          #+#    #+#             */
+/*   Updated: 2019/04/05 15:37:34 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		main(void)
+#include "libft.h"
+
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	return (0);
+	char *res;
+
+	res = ft_strnew(ft_strlen(s2) + ft_strlen(s1) + 1);
+	res = ft_strcat(ft_strcpy(res, s1), s2);
+	return (res);
 }

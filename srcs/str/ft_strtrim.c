@@ -1,16 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/04 16:12:07 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/05 11:26:35 by mescande         ###   ########.fr       */
+/*   Created: 2019/04/05 15:37:49 by mescande          #+#    #+#             */
+/*   Updated: 2019/04/05 18:10:07 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		main(void)
+char	*ft_strtrim(const char *s)
 {
-	return (0);
+	char	*res;
+	char	*cpy;
+	size_t	len;
+
+	while(cpy == ' ' || cpy == '\n' || cpy == '\t')
+		cpy++;
+	len = sizeof(cpy)
+	res = ft_strnew(len + 1);
+	if (res == 0)
+		return (0);
+	res = ft_strcpy(res, cpy);
+	while (res[len] == ' ' || res[len] == '\n' || res[len] == '\t')
+		res[len--] = '\0';
+	return (res);
 }

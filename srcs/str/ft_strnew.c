@@ -1,16 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/04 16:12:07 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/05 11:26:35 by mescande         ###   ########.fr       */
+/*   Created: 2019/04/05 13:53:24 by mescande          #+#    #+#             */
+/*   Updated: 2019/04/05 14:03:39 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		main(void)
+#include "libft.h"
+
+char	*ft_strnew(size_t size)
 {
-	return (0);
+	char *res;
+
+	if (!(res = (char *)malloc(size * sizeof(char))))
+		return 0;
+	while (--size > 0)
+		res[size] = '\0';
+	*res = '\0';
+	return (res);
 }

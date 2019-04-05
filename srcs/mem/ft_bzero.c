@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 17:35:36 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/04 16:52:13 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/05 11:25:01 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t i;
-	int t[n];
+	size_t	i;
+	int		t[n];
 
 	i = 0;
 	while (i < n)

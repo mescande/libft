@@ -1,16 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/04 16:12:07 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/05 11:26:35 by mescande         ###   ########.fr       */
+/*   Created: 2019/04/05 14:45:10 by mescande          #+#    #+#             */
+/*   Updated: 2019/04/05 14:55:31 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		main(void)
+#include "libft.h"
+
+char	*ft_strmap(const char *s, char (*f)(char))
 {
-	return (0);
+	char *res;
+	char *tmp;
+
+	res = ft_strnew(ft_strlen(s));
+	tmp = res;
+	while (s != '\0')
+		tmp++ = f(*(s++));
+	return (res);
 }
