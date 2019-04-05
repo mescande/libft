@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 14:51:17 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/05 14:55:22 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/05 19:58:14 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	char	*res;
 
 	len = 0;
-	res = ft_strnew(ft_strlen(s))
+	res = ft_strnew(ft_strlen(s));
 	while (s[len] != '\0')
 	{
 		res[len] = f(len, s[len]);

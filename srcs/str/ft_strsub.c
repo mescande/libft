@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 15:18:34 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/05 17:03:42 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/05 20:00:09 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ char	*ft_strsub(const char *s, unsigned int start, size_t len)
 		res[i] = s[start + i];
 		i++;
 	}
-	return res;
+	return (res);
 }
