@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 11:10:14 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 18:48:32 by mescande         ###   ########.fr       */
+/*   Created: 2019/04/05 19:32:42 by mescande          #+#    #+#             */
+/*   Updated: 2019/04/08 11:14:12 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putnbr(int n)
 {
-	size_t	pos;
-	char	lfi;
-
-	lfi = (char)c;
-	pos = 0;
-	if (c == 0)
-		return (NULL);
-	while (s[pos] != '\0')
-	{
-		if (s[pos] == lfi)
-			return ((char *)(s + pos));
-		pos++;
-	}
-	return (NULL);
+	ft_putnbr_fd(n, 1);
+	return ;
 }

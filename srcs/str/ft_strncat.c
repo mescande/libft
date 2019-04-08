@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 19:40:50 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 11:27:35 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/08 18:16:43 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
 		s1[i + j] = s2[j];
 		j++;
 	}
+	s1[i + j] = '\0';
 	return (s1);
 }

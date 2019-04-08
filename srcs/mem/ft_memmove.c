@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 17:48:11 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 11:23:00 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/08 17:51:25 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			l = -1;
 			while (++l < len)
 				dsti[l] = srci[l];
+			return (dst);
 		}
 	}
 	return (memcpy(dst, src, len));

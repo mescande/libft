@@ -6,17 +6,17 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 12:15:09 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/04 13:32:14 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/08 19:35:05 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int			ft_atoi(const char *str)
 {
-	int	i;
-	int	j;
-	int	res;
+	long long	i;
+	long long	j;
+	long long	res;
 
 	i = 0;
 	j = 1;

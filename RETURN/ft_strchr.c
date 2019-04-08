@@ -6,11 +6,11 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 11:10:14 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/04 17:58:20 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/08 18:42:24 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -25,5 +25,5 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)(s + pos));
 		pos++;
 	}
-	return (0);
+	return (NULL);
 }

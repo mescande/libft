@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 19:33:01 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 11:24:08 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/08 18:15:35 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ char	*ft_strcat(char *restrict s1, const char *restrict s2)
 	size_t j;
 
 	i = 0;
-	j = 0;
+	j = -1;
 	while (s1[i] != '\0')
 		i++;
-	while (s2[++j - 1] != '\0')
-		s1[i + j - 1] = s2[j - 1];
+	while (s2[++j] != '\0')
+		s1[i + j] = s2[j];
+	s1[i + j] = '\0';
 	return (s1);
 }

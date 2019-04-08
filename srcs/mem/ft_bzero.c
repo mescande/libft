@@ -6,20 +6,14 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 17:35:36 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 11:20:28 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/08 15:58:19 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	int		t[n];
-
-	i = 0;
-	while (i < n)
-		t[i++] = 0;
-	s = t;
+	s = ft_memset(s, 0, n);
 	return ;
 }

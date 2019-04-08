@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 16:12:07 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 14:22:36 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/08 17:23:19 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,16 +64,31 @@ int		main(void)
 	mine = (char *)ft_memccpy(mine, src2, 'a', 10);
 	printf("vrai :\t%s\n", them);
 	printf("mien :\t%s\n\n", mine);
-*/
+
 	printf("memchr\nvrai :\t%s\n", (char *)memchr("ceciestuntest", 'i', 13));
 	printf("mien :\t%s\n", (char *)ft_memchr("ceciestuntest", 'i', 13));
-	printf("vrai :\t%s\n", memchr("ceciestuntest", 's', 13));
-	printf("mien :\t%s\n", ft_memchr("ceciestuntest", 's', 13));
-	printf("vrai :\t%s\n", memchr("ceciestuntest", 'a', 13));
-	printf("mien :\t%s\n\n", ft_memchr("ceciestuntest", 'a', 13));
+	printf("vrai :\t%s\n", (char *)memchr("ceciestuntest", 's', 13));
+	printf("mien :\t%s\n", (char *)ft_memchr("ceciestuntest", 's', 13));
+	printf("vrai :\t%s\n", (char *)memchr("ceciestuntest", 'a', 13));
+	printf("mien :\t%s\n\n", (char *)ft_memchr("ceciestuntest", 'a', 13));
+
+	printf("memcmp\nvrai :\t%d\n", memcmp("ceciestuntest", "ceciestuntest", 13));
+	printf("mien :\t%d\n", ft_memcmp("ceciestuntest", "ceciestuntest", 13));
+	printf("vrai :\t%d\n", memcmp("ceciestuntest", "ceci estuntest", 13));
+	printf("mien :\t%d\n", ft_memcmp("ceciestuntest", "ceci estuntest", 13));
+	printf("vrai :\t%d\n", memcmp("ceci estuntest", "ceciestuntest", 13));
+	printf("mien :\t%d\n", ft_memcmp("ceci estuntest", "ceciestuntest", 13));
+	printf("vrai :\t%d\n", memcmp("ceciestuntest", "ceciestuntest", 9));
+	printf("mien :\t%d\n\n", ft_memcmp("ceciestuntest", "ceciestuntest", 9));
+*/	
+	printf("\nvrai :\t%\n", ());
+	printf("mien :\t%\n", ());
+	printf("\nvrai :\t%\n", ());
+	printf("mien :\t%\n", ());
 
 /*
 	printf("\nvrai :\t%\n", ());
-	printf("mien :\t%\n", ());*/
+	printf("mien :\t%\n", ());
+	*/
 	return (0);
 }

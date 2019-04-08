@@ -6,11 +6,11 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 17:37:42 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/04 17:49:02 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/08 17:32:43 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 
 	dsti = (char *)dst;
 	srci = (char *)src;
+	if (n == 0)
+		return (dst);
 	while (--n > 0)
 		dsti[n] = srci[n];
 	dsti[0] = srci[0];

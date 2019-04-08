@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 11:10:14 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 18:48:32 by mescande         ###   ########.fr       */
+/*   Created: 2019/04/05 19:11:41 by mescande          #+#    #+#             */
+/*   Updated: 2019/04/05 19:24:57 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putchar(char c)
 {
-	size_t	pos;
-	char	lfi;
-
-	lfi = (char)c;
-	pos = 0;
-	if (c == 0)
-		return (NULL);
-	while (s[pos] != '\0')
-	{
-		if (s[pos] == lfi)
-			return ((char *)(s + pos));
-		pos++;
-	}
-	return (NULL);
+	write(1, &c, 1);
+	return ;
 }

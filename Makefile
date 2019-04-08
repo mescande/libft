@@ -6,7 +6,7 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2019/04/08 14:22:28 by mescande         ###   ########.fr        #
+#    Updated: 2019/04/08 15:00:23 by mescande         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,8 +76,6 @@ SRC = $(addprefix $(SRC_DIR), $(SRC_LIST))
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_LIST:.c=.o))
 DIR = $(sort $(dir $(OBJ)))
 
--include $(OBJ:.o=.d)
-
 all: $(NAME)
 
 $(NAME): $(OBJ)
@@ -99,3 +97,5 @@ re: fclean
 	$(MAKE)
 
 .PHONY: all clean fclean re
+
+-include $(OBJ:.o=.d)
