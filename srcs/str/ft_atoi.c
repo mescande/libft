@@ -6,11 +6,11 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 12:15:09 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/04 13:32:14 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/08 11:23:47 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int			ft_atoi(const char *str)
 {

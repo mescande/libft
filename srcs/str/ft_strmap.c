@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 14:45:10 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/05 14:55:31 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/08 11:35:36 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ char	*ft_strmap(const char *s, char (*f)(char))
 	res = ft_strnew(ft_strlen(s));
 	tmp = res;
 	while (s != '\0')
-		tmp++ = f(*(s++));
+		*(tmp++) = f(*(s++));
 	return (res);
 }

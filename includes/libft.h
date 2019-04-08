@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 16:15:18 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/05 19:16:47 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/08 13:34:15 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int			ft_isprint(int c);
 void		*ft_memccpy(void *restrict dst, const void *restrict src,
 		int c, size_t n);
 void		*ft_memchr(const void *s, int c, size_t n);
-void		ft_memcmp(const void *s1, const void *s2, size_t n);
+int			ft_memcmp(const void *s1, const void *s2, size_t n);
 void		*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 void		*ft_memmove(void *dst, const void *src, size_t len);
 void		*ft_memset(void *b, int c, size_t len);
@@ -54,7 +54,7 @@ char		*ft_strnew(size_t size);
 void		ft_strdel(char **as);
 void		ft_strclr(char *s);
 void		ft_striter(char *s, void (*f)(char *));
-void		ft_striteri(char *s, void (*f)(unsigned int, char));
+void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 char		*ft_strmap(const char *s, char (*f)(char));
 char		*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 int			ft_strequ(const char *s1, const char *s2);
@@ -72,5 +72,7 @@ void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(const char *s, int fd);
 void		ft_putendl_fd(const char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
+
+char		*ft_strtok(char *restrict str, const char *restrict sep);
 
 #endif

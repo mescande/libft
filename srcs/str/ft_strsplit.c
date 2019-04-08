@@ -6,13 +6,11 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 18:21:48 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/05 19:01:20 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/08 13:39:40 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-//TODO : finir parce que la vraiment je veux pas...
 
 static char	**ft_strstrcpy(char **dst, char **src)
 {
@@ -33,37 +31,45 @@ static char	**ft_strstrcpy(char **dst, char **src)
 	return (dst);
 }
 
+static char	*ft_strrealloc(size_t size, char *src)
+{
+	char *new;
+
+	new = ft_memalloc(size);
+	if (new == 0)
+		return (0);
+	new = ft_strcpy(new, src);
+	free(src);
+	return (new);
+}
+
+static char	**ft_strstrrealloc(size_t size, char **src)
+{
+	char	**new;
+	size_t	i;
+
+	i = 0;
+	new = ft_memalloc(size);
+	while (src[i] != '\0')
+		ft_strrealloc(ft_strlen(src[i]), src[i]);
+	new = ft_strstrcpy(new, src);
+	free(src);
+	return (new);
+}
+
 char		**ft_strsplit(const char *s, char c)
 {
 	char	**res;
-	char	**tmp;
-	size_t	compteurs[2];
+	char	sep[2];
+	size_t	i;
 
-	bzero(compteurs, 2);
-	res = (char **)malloc(10 * sizeof(char *));
-	res[compteur[0]] = (char *)malloc(10 * sizeof(char));
-	while (s[compteurs[2]] != '\0')
-	{
-		if (compteurs[0] % 10 == 0)
-		{
-			tmp = res;
-			res = malloc(10 * sizeof(char*) * (i % 10));
-			res = ft_strstrcpy(res, tmp);
-			free(tmp);
-		}
-		if (s[compteurs[2]] == c)
-			if (s[compteurs[2]++ - 1] != c)
-			{
-				compteurs[0]++;
-				compteurs[1] = 0;
-			}
-		else
-		{
-			if (compteurs[1] % 10 == 0)
-			{
-			}
-			res[compteurs[0]][compteurs[1]] = s[compteurs[2]++];
-		}
-	}
-	return (res)
+	sep[0] = c;
+	sep[1] = '\0';
+	res = (char **)malloc(ft_strlen(s) * sizeof(char *));
+	i = 0;
+	res[i] = ft_strtok((char *)s, sep);
+	while (res[i++])
+		res[i] = ft_strtok(0, sep);
+	res = ft_strstrrealloc(i, res);
+	return (res);
 }

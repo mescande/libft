@@ -6,11 +6,11 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 19:33:01 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/04 17:56:32 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/08 11:24:08 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strcat(char *restrict s1, const char *restrict s2)
 {

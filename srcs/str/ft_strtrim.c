@@ -6,9 +6,11 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 15:37:49 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/05 20:01:05 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/08 13:36:28 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strtrim(const char *s)
 {
@@ -16,7 +18,8 @@ char	*ft_strtrim(const char *s)
 	char	*cpy;
 	size_t	len;
 
-	while (cpy == ' ' || cpy == '\n' || cpy == '\t')
+	cpy = (char *)s;
+	while (*cpy == ' ' || *cpy == '\n' || *cpy == '\t')
 		cpy++;
 	len = sizeof(cpy);
 	res = ft_strnew(len + 1);

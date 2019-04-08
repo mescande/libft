@@ -6,7 +6,7 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2019/04/05 19:20:12 by mescande         ###   ########.fr        #
+#    Updated: 2019/04/08 14:22:28 by mescande         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SRC_LIST = main.c\
 		   mem/ft_memchr.c\
 		   mem/ft_memcmp.c\
 		   mem/ft_memcpy.c\
-		   mem/ft_memdel.c
+		   mem/ft_memdel.c\
 		   mem/ft_memmove.c\
 		   mem/ft_memset.c\
 		   put/ft_putchar.c\
@@ -81,19 +81,19 @@ DIR = $(sort $(dir $(OBJ)))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CC) $(FLAGS) $^ -o $@
+	$(CC) $(FLAGS) $^ -o $@
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(DIR)
-	@$(CC) $(FLAGS) -MMD -c $< -o $@ -I $(INC_DIR)
+	$(CC) $(FLAGS) -MMD -c $< -o $@ -I $(INC_DIR)
 
 $(DIR):
-	@mkdir -p $@
+	mkdir -p $@
 
 clean:
-	@rm -rf $(OBJ_DIR)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	@rm -rf $(NAME)
+	rm -rf $(NAME)
 
 re: fclean
 	$(MAKE)

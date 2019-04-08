@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 19:30:35 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/05 19:32:29 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/08 11:13:14 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void	ft_putendl(const char *s)
 {
 	ft_putstr(s);
-	write(1, '\n', 1);
+	write(1, "\n", 1);
 	return ;
 }

@@ -6,11 +6,11 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 13:48:50 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/05 13:52:36 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/08 11:12:24 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libfth."
+#include "libft.h"
 
 void	ft_memdel(void **ap)
 {

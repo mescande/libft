@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 19:32:42 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/05 19:33:36 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/08 11:14:12 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putnbr(int n)
 {
-	ft_putnbr_fd(n);
+	ft_putnbr_fd(n, 1);
 	return ;
 }

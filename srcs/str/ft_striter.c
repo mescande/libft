@@ -6,9 +6,11 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 14:25:44 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/05 14:41:17 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/08 11:26:20 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_striter(char *s, void (*f)(char *))
 {
