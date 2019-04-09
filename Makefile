@@ -6,7 +6,7 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2019/04/08 15:00:23 by mescande         ###   ########.fr        #
+#    Updated: 2019/04/09 18:59:31 by mescande         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,12 @@ SRC_LIST = main.c\
 		   chr/ft_isprint.c\
 		   chr/ft_tolower.c\
 		   chr/ft_toupper.c\
+		   lst/ft_lstadd.c\
+		   lst/ft_lstdel.c\
+		   lst/ft_lstdelone.c\
+		   lst/ft_lstiter.c\
+		   lst/ft_lstmap.c\
+		   lst/ft_lstnew.c\
 		   mem/ft_bzero.c\
 		   mem/ft_memalloc.c\
 		   mem/ft_memccpy.c\

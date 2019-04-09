@@ -6,60 +6,12 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 18:21:48 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 20:20:34 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/09 16:29:57 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-static char	**ft_strstrcpy(char **dst, char **src)
-{
-	size_t	i;
-	size_t	j;
 
-	i = 0;
-	while (src[i] != 0)
-	{
-		j = 0;
-		while (src[i][j] != 0)
-		{
-			dst[i][j] = src[i][j];
-			j++;
-		}
-		i++;
-	}
-	return (dst);
-}
-
-static char	*ft_strrealloc(size_t size, char *src)
-{
-	char *new;
-
-	new = ft_memalloc(size);
-	if (new == 0)
-		return (0);
-	new = ft_strcpy(new, src);
-	free(src);
-	return (new);
-}
-
-static char	**ft_strstrrealloc(size_t size, char **src)
-{
-	char	**new;
-	size_t	i;
-
-	i = 0;
-	new = ft_memalloc(size);
-	while (i != size)
-	{
-		ft_strrealloc(ft_strlen(src[i]), src[i]);
-		i++;
-	}
-	new = ft_strstrcpy(new, src);
-	free(src);
-	return (new);
-}
-*/
 char		**ft_strsplit(const char *s, char c)
 {
 	char	**res;
@@ -68,6 +20,8 @@ char		**ft_strsplit(const char *s, char c)
 
 	sep[0] = c;
 	sep[1] = '\0';
+	if (s == 0)
+		return (NULL);
 	res = (char **)malloc(ft_strlen(s) * sizeof(char *));
 	if (res == NULL)
 		return (NULL);
@@ -75,6 +29,5 @@ char		**ft_strsplit(const char *s, char c)
 	res[i] = ft_strtok((char *)s, sep);
 	while (res[i++])
 		res[i] = ft_strtok(0, sep);
-//	res = ft_strstrrealloc(i, res);
 	return (res);
 }

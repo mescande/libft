@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 11:10:14 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/09 14:39:30 by mescande         ###   ########.fr       */
+/*   Created: 2019/04/09 17:17:44 by mescande          #+#    #+#             */
+/*   Updated: 2019/04/09 19:15:30 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	size_t	pos;
-	char	lfi;
-
-	lfi = (char)c;
-	pos = 0;
-	while (s[pos] != '\0' || lfi == '\0')
-	{
-		if (s[pos] == lfi)
-			return ((char *)(s + pos));
-		pos++;
-	}
-	return (NULL);
+	if ((*alst)->next != NULL)
+		ft_lstdel(&((*alst)->next), del);
+	ft_lstdelone(alst, del);
+	*alst = NULL;
+	return ;
 }

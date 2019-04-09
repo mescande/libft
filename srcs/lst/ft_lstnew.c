@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 11:10:14 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/09 14:39:30 by mescande         ###   ########.fr       */
+/*   Created: 2019/04/09 16:45:59 by mescande          #+#    #+#             */
+/*   Updated: 2019/04/09 18:24:25 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	size_t	pos;
-	char	lfi;
+	t_list	*res;
 
-	lfi = (char)c;
-	pos = 0;
-	while (s[pos] != '\0' || lfi == '\0')
+	if (!(res = (t_list *)malloc(sizeof(t_list))))
+		return (NULL);
+	res->next = NULL;
+	if (content == NULL)
 	{
-		if (s[pos] == lfi)
-			return ((char *)(s + pos));
-		pos++;
+		res->content = NULL;
+		res->content_size = 0;
 	}
-	return (NULL);
+	else
+	{
+		if (!(res->content = malloc(content_size)))
+			return (NULL);
+		res->content_size = content_size;
+		res->content = ft_memcpy(res->content, content, res->content_size);
+	}
+	return (res);
 }

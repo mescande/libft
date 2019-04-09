@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 11:10:14 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/09 14:39:30 by mescande         ###   ########.fr       */
+/*   Created: 2019/04/09 19:20:42 by mescande          #+#    #+#             */
+/*   Updated: 2019/04/09 19:32:41 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	size_t	pos;
-	char	lfi;
+	t_list *res;
 
-	lfi = (char)c;
-	pos = 0;
-	while (s[pos] != '\0' || lfi == '\0')
-	{
-		if (s[pos] == lfi)
-			return ((char *)(s + pos));
-		pos++;
-	}
-	return (NULL);
+	if (lst == NULL)
+		return (NULL);
+	res = f(lst);
+	if (lst->next != NULL)
+		res->next = ft_lstmap(lst->next, f);
+	return (res);
 }

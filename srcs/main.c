@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 16:12:07 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 17:23:19 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/09 19:49:35 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,15 @@ int		main(void)
 	printf("vrai :\t%d\n", memcmp("ceciestuntest", "ceciestuntest", 9));
 	printf("mien :\t%d\n\n", ft_memcmp("ceciestuntest", "ceciestuntest", 9));
 */	
-	printf("\nvrai :\t%\n", ());
-	printf("mien :\t%\n", ());
-	printf("\nvrai :\t%\n", ());
-	printf("mien :\t%\n", ());
+	//printf("strtok\nvrai :\t%s\n", strtok("les patates sont chaudes", " "));
+//	printf("vrai:\t%s\n", strtok(NULL, " "));
+//	printf("vrai:\t%s\n", strtok(NULL, " "));
+//	fflush(stdout);
+	printf("mien:\t%s\n", ft_strtok("   les  patates sont chaudes", " "));
+	printf("mien:\t%s\n", ft_strtok(NULL, " "));
+	printf("mien:\t%s\n", ft_strtok(NULL, " "));
+	printf("mien:\t%s\n", ft_strtok(NULL, " "));
+	printf("mien:\t%s\n", ft_strtok(NULL, " "));
 
 /*
 	printf("\nvrai :\t%\n", ());

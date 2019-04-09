@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 19:01:40 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 20:52:25 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/09 16:26:20 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,22 @@ char	*ft_itoa(int n)
 	char	*res;
 	size_t	len;
 	int		tmp;
+	int		neg;
 
 	tmp = n;
+	if (n == 0 || n == -0)
+		return ("0");
 	len = (n < 0 ? 1 : 0);
-	while (tmp != 0 && len++)
+	while (tmp != 0 && ++len)
 		tmp /= 10;
 	res = ft_strnew(len);
 	if (res == NULL)
 		return (NULL);
-	res[--len] = '\0';
-	tmp = (n < 0 ? -n : n);
+	tmp = n;
+	neg = (n < 0 ? -1 : 1);
 	while (tmp != 0)
 	{
-		res[--len] = '0' + (tmp % 10);
+		res[--len] = '0' + neg * (tmp % 10);
 		tmp /= 10;
 	}
 	if (n < 0)
