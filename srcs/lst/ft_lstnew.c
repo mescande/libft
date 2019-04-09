@@ -6,11 +6,12 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 16:45:59 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/09 18:24:25 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/09 20:33:37 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {

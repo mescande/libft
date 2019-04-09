@@ -6,11 +6,12 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 13:53:24 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 19:47:45 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/09 20:39:46 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strnew(size_t size)
 {

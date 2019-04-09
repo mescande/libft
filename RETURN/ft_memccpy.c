@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 17:42:12 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 17:57:42 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/09 20:08:54 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*ft_memccpy(void *restrict dst, const void *restrict src,
 	while (i < n)
 	{
 		dsti[i] = srci[i];
-		if ((unsigned char)srci[i++] == (unsigned char)c)	
+		if ((unsigned char)srci[i++] == (unsigned char)c)
 			return (dst + i);
 	}
 	return (0);

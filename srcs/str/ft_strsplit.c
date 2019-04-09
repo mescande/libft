@@ -6,11 +6,12 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 18:21:48 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/09 16:29:57 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/09 20:40:19 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 char		**ft_strsplit(const char *s, char c)
 {

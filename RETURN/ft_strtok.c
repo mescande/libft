@@ -6,11 +6,12 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 11:34:25 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 14:29:12 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/09 20:40:45 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static int	testsep(char *str, const char *restrict sep)
 {

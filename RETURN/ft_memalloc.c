@@ -6,18 +6,19 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 13:34:57 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 19:27:06 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/09 20:33:51 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 void	*ft_memalloc(size_t size)
 {
 	char	*res;
 
 	res = malloc(size);
-	if (res ==  NULL)
+	if (res == NULL)
 		return (NULL);
 	while (--size != 0)
 		res[size] = 0;

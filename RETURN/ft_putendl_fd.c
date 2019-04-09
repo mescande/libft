@@ -6,11 +6,12 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 19:36:24 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 20:17:14 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/09 20:36:03 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 void	ft_putendl_fd(const char *s, int fd)
 {
