@@ -6,13 +6,14 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 16:12:07 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/09 19:49:35 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/10 14:49:44 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <ctype.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int		main(void)
 {
@@ -80,16 +81,33 @@ int		main(void)
 	printf("mien :\t%d\n", ft_memcmp("ceci estuntest", "ceciestuntest", 13));
 	printf("vrai :\t%d\n", memcmp("ceciestuntest", "ceciestuntest", 9));
 	printf("mien :\t%d\n\n", ft_memcmp("ceciestuntest", "ceciestuntest", 9));
-*/	
-	//printf("strtok\nvrai :\t%s\n", strtok("les patates sont chaudes", " "));
-//	printf("vrai:\t%s\n", strtok(NULL, " "));
-//	printf("vrai:\t%s\n", strtok(NULL, " "));
-//	fflush(stdout);
-	printf("mien:\t%s\n", ft_strtok("   les  patates sont chaudes", " "));
+
+	char str[] = "les patates sont chaudes";
+	char spr[] = "les patates sont chaudes";
+	printf("strtok\nvrai :\t%s\n", strtok(str, " "));
+	printf("vrai:\t%s\n", strtok(NULL, " "));
+	printf("vrai:\t%s\n", strtok(NULL, " "));
+	printf("mien:\t%s\n", ft_strtok(spr, " "));
 	printf("mien:\t%s\n", ft_strtok(NULL, " "));
-	printf("mien:\t%s\n", ft_strtok(NULL, " "));
-	printf("mien:\t%s\n", ft_strtok(NULL, " "));
-	printf("mien:\t%s\n", ft_strtok(NULL, " "));
+	printf("mien:\t%s\n\n", ft_strtok(NULL, " "));
+*/
+	char str[] = "0 0 0 0 0 0 0";
+	char *spr = "split    ||this|for|me||||!|";
+	char *s;
+	printf("strsplit\n");
+	fflush(stdout);
+	char **split = ft_strsplit(str, ' ');
+	s = (char *)malloc(ft_strlen(str) * sizeof(char));
+	s = ft_strcpy(s, str);
+	printf("%s\n", s);
+	fflush(stdout);
+	while (*split != NULL)
+		printf("mien :\t%s\n", *(split++));
+	fflush(stdout);
+	split = ft_strsplit(spr, '|');
+	printf("\n");
+	while (*split != NULL)
+		printf("mien :\t%s\n", *(split++));
 
 /*
 	printf("\nvrai :\t%\n", ());

@@ -6,7 +6,7 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2019/04/09 20:22:18 by mescande         ###   ########.fr        #
+#    Updated: 2019/04/10 14:58:17 by mescande         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,10 +87,10 @@ $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(DIR)
-	$(CC) $(FLAGS) -MMD -c $< -o $@ -I $(INC_DIR)
+	@$(CC) $(FLAGS) -MMD -c $< -o $@ -I $(INC_DIR)
 
 $(DIR):
-	mkdir -p $@
+	@mkdir -p $@
 
 clean:
 	rm -rf $(OBJ_DIR)
