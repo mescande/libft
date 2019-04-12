@@ -6,11 +6,12 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 10:54:25 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/12 11:01:01 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/12 20:58:24 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static int	ft_strcpy_c(char *dest, char const *src, char c)
 {

@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 11:41:51 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/12 11:43:12 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/12 21:02:22 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		ft_isupper(int c)
 {
-	return (64 < (unsigned char)c && (unsigned char)c < 91);
+	return (64 < c && c < 91);
 }

@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 11:34:03 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/12 12:02:57 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/12 20:59:24 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		ft_islower(int c)
 {
-	return (96 < (unsigned char)c && (unsigned char)c < 123);
+	return (96 < c && c < 123);
 }

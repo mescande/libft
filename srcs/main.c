@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 16:12:07 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/10 14:49:44 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/12 21:37:43 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int		main(void)
 	printf("mien:\t%s\n", ft_strtok(spr, " "));
 	printf("mien:\t%s\n", ft_strtok(NULL, " "));
 	printf("mien:\t%s\n\n", ft_strtok(NULL, " "));
-*/
+
 	char str[] = "0 0 0 0 0 0 0";
 	char *spr = "split    ||this|for|me||||!|";
 	char *s;
@@ -108,6 +108,28 @@ int		main(void)
 	printf("\n");
 	while (*split != NULL)
 		printf("mien :\t%s\n", *(split++));
+
+	printf("islower\n");
+	int i = -50;
+	while(i++ < 500)
+		if (ft_islower(i) != islower(i))
+			printf("i : %d\tV :%d\tM :%d\n", i, islower(i), ft_islower(i));
+
+	printf("strcmp\nvrai :\t%d\n", strcmp("wba", "abc"));
+	printf("mien :\t%d\n\n", ft_strcmp("wba", "abc"));
+	printf("strncmp\nvrai :\t%d\n", strncmp("abc", "abcde", 3));
+	printf("mien :\t%d\n", ft_strncmp("abc", "abcde", 3));
+*/
+	printf("itoa\nvrai :\t%s\n", "0");
+	printf("mien :\t%s\n", ft_itoa(0));
+	printf("vrai :\t%s\n", "-123");
+	printf("mien :\t%s\n", ft_itoa(-123));
+	printf("vrai :\t%s\n", "123");
+	printf("mien :\t%s\n", ft_itoa(123));
+	printf("vrai :\t%s\n", "-2147483648");
+	printf("mien :\t%s\n", ft_itoa(-2147483648));
+	printf("vrai :\t%s\n", "2147483647");
+	printf("mien :\t%s\n", ft_itoa(2147483647));
 
 /*
 	printf("\nvrai :\t%\n", ());

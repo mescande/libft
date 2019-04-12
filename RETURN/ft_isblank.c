@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 11:07:40 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/12 12:00:22 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/12 21:02:48 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		ft_isblank(int c)
 {
-	return ((unsigned char)c == '\t' || (unsigned char)c == ' ');
+	return (c == '\t' || c == ' ');
 }

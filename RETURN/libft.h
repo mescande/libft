@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 16:15:18 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/12 11:53:31 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/12 21:00:26 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # define SIGN(Value)	(Value < 0 ? -1 : 1)
 
 # include <string.h>
-# include <stdlib.h>
-# include <unistd.h>
 
 typedef struct	s_list
 {

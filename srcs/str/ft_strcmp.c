@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 11:41:49 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 11:24:48 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/12 21:17:59 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,5 @@ int		ft_strcmp(const char *s1, const char *s2)
 			return (0);
 		return (-1);
 	}
-	if ((unsigned char)s1[pos] > (unsigned char)s2[pos])
-		return (1);
-	if ((unsigned char)s1[pos] < (unsigned char)s2[pos])
-		return (-1);
-	return (0);
+	return ((unsigned char)s1[pos] - (unsigned char)s2[pos]);
 }

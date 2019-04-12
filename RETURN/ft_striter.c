@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 14:25:44 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 19:41:02 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/12 21:06:26 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	if (s == NULL)
+	if (s == NULL || f == NULL)
 		return ;
 	while (*s != '\0')
 		f(s++);
