@@ -5,68 +5,80 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/05 18:21:48 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/10 14:55:50 by mescande         ###   ########.fr       */
+/*   Created: 2019/04/12 10:54:25 by mescande          #+#    #+#             */
+/*   Updated: 2019/04/12 11:01:01 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-static int	testsep(char *str, const char *restrict sep)
+static int	ft_strcpy_c(char *dest, char const *src, char c)
 {
-	size_t	len;
-	size_t	n;
+	int decalage;
 
-	len = ft_strlen(sep);
-	n = 0;
-	while (n < len)
-		if (*str == sep[n++])
-			return (1);
-	return (0);
+	decalage = 0;
+	while (*src && *src != c)
+	{
+		*dest = *src;
+		++dest;
+		++src;
+		++decalage;
+	}
+	*dest = '\0';
+	return (decalage);
 }
 
-static char	*ft_malstrtok(char *restrict str, const char *restrict sep)
+static int	ft_strlen_c(char const *str, char c)
 {
-	static char	*sttc_str;
-	size_t		len;
-	size_t		n;
-	char		*res;
+	int len;
 
-	n = 0;
 	len = 0;
-	if (str != NULL)
-		sttc_str = str;
-	while (testsep(sttc_str, sep))
-		sttc_str++;
-	if (*sttc_str == 0)
-		return (0);
-	while (!testsep(sttc_str + len, sep))
-		len++;
-	if (!(res = (char *)malloc((len + 1) * sizeof(char))))
-		return (NULL);
-	while (n < len)
-		res[n++] = (char)*(sttc_str++);
-	res[n] = '\0';
-	return (res);
+	while (*str && *str != c)
+	{
+		++str;
+		++len;
+	}
+	return (len);
 }
 
-char		**ft_strsplit(const char *s, char c)
+static int	ft_nbstr_c(char const *str, char c)
 {
-	char	**res;
-	char	sep[2];
-	size_t	i;
+	int len;
 
-	sep[0] = c;
-	sep[1] = '\0';
-	if (s == 0)
+	len = 0;
+	while (*str)
+	{
+		while (*str && *str == c)
+			++str;
+		if (*str)
+			++len;
+		while (*str && *str != c)
+			++str;
+	}
+	return (len);
+}
+
+char		**ft_strsplit(char const *str, char c)
+{
+	char	**s1;
+	int		i;
+
+	if (!str)
 		return (NULL);
-	res = (char **)malloc(ft_strlen(s) * sizeof(char *));
-	if (res == NULL)
+	if (!(s1 = (char**)malloc(sizeof(*s1) * (ft_nbstr_c(str, c) + 1))))
 		return (NULL);
 	i = 0;
-	res[i] = ft_malstrtok((char *)s, sep);
-	while (res[i++])
-		res[i] = ft_malstrtok(0, sep);
-	return (res);
+	while (*str != '\0' && *str == c)
+		++str;
+	while (*str != '\0')
+	{
+		if (!(s1[i] = (char*)malloc(sizeof(**s1) * (ft_strlen_c(str, c) + 1))))
+			return (NULL);
+		str = str + ft_strcpy_c(s1[i], str, c);
+		++i;
+		while (*str && *str == c)
+			++str;
+	}
+	s1[i] = 0;
+	return (s1);
 }

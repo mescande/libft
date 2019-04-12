@@ -6,7 +6,7 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2019/04/09 18:59:31 by mescande         ###   ########.fr        #
+#    Updated: 2019/04/12 11:52:12 by mescande         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,15 @@ SRC_LIST = main.c\
 		   chr/ft_isalnum.c\
 		   chr/ft_isalpha.c\
 		   chr/ft_isascii.c\
+		   chr/ft_isblank.c\
+		   chr/ft_iscntrl.c\
 		   chr/ft_isdigit.c\
+		   chr/ft_isgraph.c\
+		   chr/ft_islower.c\
 		   chr/ft_isprint.c\
+		   chr/ft_isspace.c\
+		   chr/ft_isupper.c\
+		   chr/ft_isxdigit.c\
 		   chr/ft_tolower.c\
 		   chr/ft_toupper.c\
 		   lst/ft_lstadd.c\

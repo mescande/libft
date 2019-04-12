@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 15:37:49 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/09 20:41:09 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/10 16:43:33 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,5 @@ char	*ft_strtrim(const char *s)
 		res[len--] = '\0';
 	cpy = (char *)malloc((ft_strlen(res) + 1) * sizeof(char));
 	cpy = ft_strcpy(cpy, res);
-	free(res);
 	return (cpy);
 }

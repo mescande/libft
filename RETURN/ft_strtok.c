@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 11:34:25 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/10 09:51:08 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/10 18:05:53 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,19 @@ char		*ft_strtok(char *restrict str, const char *restrict sep)
 	len = 0;
 	if (str != NULL)
 		sttc_str = str;
-	while (testsep(sttc_str, sep))
+	while (*sttc_str && testsep(sttc_str, sep))
 		sttc_str++;
 	if (*sttc_str == 0)
 		return (0);
-	while (!testsep(sttc_str + len, sep))
+	while (sttc_str[len] && !testsep(sttc_str + len, sep))
 		len++;
-	if (!(res = (char *)malloc((len + 1) * sizeof(char))))
-		return (NULL);
 	res = sttc_str;
-	sttc_str[len] = '\0';
-	sttc_str += len + 1;
+	if (sttc_str[len] != '\0')
+	{
+		sttc_str[len] = '\0';
+		sttc_str += len + 1;
+	}
+	else
+		sttc_str += len;
 	return (res);
 }

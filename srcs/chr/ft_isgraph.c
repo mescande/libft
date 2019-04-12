@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_isgraph.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/05 15:15:14 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/10 17:26:20 by mescande         ###   ########.fr       */
+/*   Created: 2019/04/12 11:29:19 by mescande          #+#    #+#             */
+/*   Updated: 2019/04/12 12:02:12 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strnequ(const char *s1, const char *s2, size_t n)
+int		ft_isgraph(int c)
 {
-	size_t i;
-
-	i = 0;
-	if (s1 == NULL || s2 == NULL)
-		return (0);
-	while (s1[i] == s2[i] && s1[i] != '\0' && i < n)
-		i++;
-	if (s1[i] == s2[i] || i == n || n == 0)
-		return (1);
-	return (0);
+	return (32 < (unsigned char)c && (unsigned char)c < 127);
 }
