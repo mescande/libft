@@ -6,14 +6,14 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 11:34:25 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/10 09:51:08 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/13 18:12:12 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static int	testsep(char *str, const char *restrict sep)
+static int	testsep(char *str, const char *sep)
 {
 	size_t	len;
 	size_t	n;
@@ -26,7 +26,7 @@ static int	testsep(char *str, const char *restrict sep)
 	return (0);
 }
 
-char		*ft_strtok(char *restrict str, const char *restrict sep)
+char		*ft_strtok(char *str, const char *sep)
 {
 	static char	*sttc_str;
 	size_t		len;
@@ -37,16 +37,19 @@ char		*ft_strtok(char *restrict str, const char *restrict sep)
 	len = 0;
 	if (str != NULL)
 		sttc_str = str;
-	while (testsep(sttc_str, sep))
+	while (*sttc_str && testsep(sttc_str, sep))
 		sttc_str++;
 	if (*sttc_str == 0)
 		return (0);
-	while (!testsep(sttc_str + len, sep))
+	while (sttc_str[len] && !testsep(sttc_str + len, sep))
 		len++;
-	if (!(res = (char *)malloc((len + 1) * sizeof(char))))
-		return (NULL);
 	res = sttc_str;
-	sttc_str[len] = '\0';
-	sttc_str += len + 1;
+	if (sttc_str[len] != '\0')
+	{
+		sttc_str[len] = '\0';
+		sttc_str += len + 1;
+	}
+	else
+		sttc_str += len;
 	return (res);
 }

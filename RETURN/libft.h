@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 16:15:18 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/12 21:00:26 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/13 18:02:02 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,24 +31,20 @@ int				ft_isalpha(int c);
 int				ft_isascii(int c);
 int				ft_isdigit(int c);
 int				ft_isprint(int c);
-void			*ft_memccpy(void *restrict dst, const void *restrict src,
-		int c, size_t n);
+void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
-void			*ft_memcpy(void *restrict dst, const void *restrict src,
-		size_t n);
+void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *b, int c, size_t len);
-char			*ft_strcat(char *restrict s1, const char *restrict s2);
+char			*ft_strcat(char *s1, const char *s2);
 char			*ft_strchr(const char *s, int c);
 int				ft_strcmp(const char *s1, const char *s2);
 char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strdup(const char *s1);
-size_t			ft_strlcat(char *restrict dst, const char *restrict src,
-		size_t size);
+size_t			ft_strlcat(char *dst, const char *src, size_t size);
 size_t			ft_strlen(const char *s);
-char			*ft_strncat(char *restrict s1, const char *restrict s2,
-		size_t n);
+char			*ft_strncat(char *s1, const char *s2, size_t n);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strncpy(char *dst, const char *src, size_t len);
 char			*ft_strnstr(const char *haystack, const char *needle,
@@ -90,7 +86,7 @@ void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
-char			*ft_strtok(char *restrict str, const char *restrict sep);
+char			*ft_strtok(char *str, const char *sep);
 int				ft_isblank(int c);
 int				ft_iscntrl(int c);
 int				ft_isgraph(int c);

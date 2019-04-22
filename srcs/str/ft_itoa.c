@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 19:01:40 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/12 21:24:57 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/17 10:01:33 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_itoa(int n)
 
 	tmp = n;
 	if (n == 0 || n == -0)
-		return ("0");
+		return (ft_strdup("0"));
 	len = (n < 0 ? 1 : 0);
 	while (tmp != 0 && ++len)
 		tmp /= 10;

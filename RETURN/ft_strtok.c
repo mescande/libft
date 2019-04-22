@@ -6,14 +6,14 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 11:34:25 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/10 18:05:53 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/13 18:12:12 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static int	testsep(char *str, const char *restrict sep)
+static int	testsep(char *str, const char *sep)
 {
 	size_t	len;
 	size_t	n;
@@ -26,7 +26,7 @@ static int	testsep(char *str, const char *restrict sep)
 	return (0);
 }
 
-char		*ft_strtok(char *restrict str, const char *restrict sep)
+char		*ft_strtok(char *str, const char *sep)
 {
 	static char	*sttc_str;
 	size_t		len;

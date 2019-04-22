@@ -6,13 +6,13 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 17:37:42 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 17:32:43 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/13 18:03:27 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	char	*dsti;
 	char	*srci;
