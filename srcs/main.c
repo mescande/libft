@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 16:12:07 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/12 21:37:43 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/25 23:59:54 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ int		main(void)
 	printf("mien :\t%d\n\n", ft_strcmp("wba", "abc"));
 	printf("strncmp\nvrai :\t%d\n", strncmp("abc", "abcde", 3));
 	printf("mien :\t%d\n", ft_strncmp("abc", "abcde", 3));
-*/
+
 	printf("itoa\nvrai :\t%s\n", "0");
 	printf("mien :\t%s\n", ft_itoa(0));
 	printf("vrai :\t%s\n", "-123");
@@ -131,6 +131,14 @@ int		main(void)
 	printf("vrai :\t%s\n", "2147483647");
 	printf("mien :\t%s\n", ft_itoa(2147483647));
 
+	int i = -500;
+	while(i++ < 500)
+		if (ft_iscntrl(i) != iscntrl(i))
+		{
+			printf("%d\nvrai :\t%d\n", i, iscntrl(i));
+			printf("mien :\t%d\n", ft_iscntrl(i));
+		}
+*/
 /*
 	printf("\nvrai :\t%\n", ());
 	printf("mien :\t%\n", ());

@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 11:15:40 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/12 12:00:53 by mescande         ###   ########.fr       */
+/*   Updated: 2019/04/25 23:53:42 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 int		ft_iscntrl(int c)
 {
-	return ((0 <= (unsigned char)c && (unsigned char)c < 32) ||
-			(unsigned char)c == 127);
+	return ((c >= 0 && c < 32) || c == 127);
 }
