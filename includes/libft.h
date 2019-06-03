@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 16:15:18 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/13 18:02:02 by mescande         ###   ########.fr       */
+/*   Updated: 2019/05/04 20:40:24 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,8 @@ int				ft_islower(int c);
 int				ft_isspace(int c);
 int				ft_isupper(int c);
 int				ft_isxdigit(int c);
+
+void			*ft_memrealloc(void *buff, size_t end, size_t init);
+void			ft_putstrstr(char **str);
 
 #endif

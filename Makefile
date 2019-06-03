@@ -6,9 +6,15 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2019/04/12 11:52:12 by mescande         ###   ########.fr        #
+#    Updated: 2019/06/03 14:48:26 by mescande         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+_WHITE=$ \x1b[37m
+_BLUE=$ \x1b[36m
+_GREEN=$ \033[1;32m
+_GREY=$ \x1b[33m
+_RED=$ \x1b[31m
 
 NAME = test
 CC = gcc
@@ -46,6 +52,7 @@ SRC_LIST = main.c\
 		   mem/ft_memcpy.c\
 		   mem/ft_memdel.c\
 		   mem/ft_memmove.c\
+		   mem/ft_memrealloc.c\
 		   mem/ft_memset.c\
 		   put/ft_putchar.c\
 		   put/ft_putchar_fd.c\
@@ -55,6 +62,7 @@ SRC_LIST = main.c\
 		   put/ft_putnbr_fd.c\
 		   put/ft_putstr.c\
 		   put/ft_putstr_fd.c\
+		   put/ft_putstrstr.c\
 		   str/ft_atoi.c\
 		   str/ft_itoa.c\
 		   str/ft_strcat.c\
@@ -92,22 +100,24 @@ DIR = $(sort $(dir $(OBJ)))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $^ -o $@
+	@$(CC) $(FLAGS) $^ -o $@
+	@echo "$(_GREEN)Done !$(_WHITE)$(NAME)"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(DIR)
-	$(CC) $(FLAGS) -MMD -c $< -o $@ -I $(INC_DIR)
+	@$(CC) $(FLAGS) -MMD -c $< -o $@ -I $(INC_DIR)
+	@echo "$(_GREEN)[OK] $(_BLUE)Compilation... $(_WHITE)"
 
 $(DIR):
-	mkdir -p $@
+	@mkdir -p $@
 
 clean:
-	rm -rf $(OBJ_DIR)
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean
-	$(MAKE)
+	@$(MAKE)
 
 .PHONY: all clean fclean re
 

@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 17:37:42 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/13 18:03:27 by mescande         ###   ########.fr       */
+/*   Updated: 2019/06/03 12:49:21 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	dsti = (char *)dst;
 	srci = (char *)src;
-	if (n == 0)
+	if (n == 0 || (dst == NULL && src == NULL))
 		return (dst);
 	while (--n > 0)
 		dsti[n] = srci[n];

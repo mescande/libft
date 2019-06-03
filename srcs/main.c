@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 16:12:07 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/25 23:59:54 by mescande         ###   ########.fr       */
+/*   Updated: 2019/06/03 14:47:09 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,13 +131,16 @@ int		main(void)
 	printf("vrai :\t%s\n", "2147483647");
 	printf("mien :\t%s\n", ft_itoa(2147483647));
 
-	int i = -500;
-	while(i++ < 500)
+	int i = -500000;
+	while(i++ < 500000)
 		if (ft_iscntrl(i) != iscntrl(i))
 		{
 			printf("%d\nvrai :\t%d\n", i, iscntrl(i));
 			printf("mien :\t%d\n", ft_iscntrl(i));
 		}
+
+	printf("memcpy\nvrai :\t%d\n", (int)memcpy(NULL, NULL, 3));
+	printf("mien :\t%d\n", (int)ft_memcpy(NULL, NULL, 3));
 */
 /*
 	printf("\nvrai :\t%\n", ());

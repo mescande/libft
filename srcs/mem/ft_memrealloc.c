@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memrealloc.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 17:37:42 by mescande          #+#    #+#             */
-/*   Updated: 2019/06/03 12:49:21 by mescande         ###   ########.fr       */
+/*   Created: 2019/05/04 12:59:20 by mescande          #+#    #+#             */
+/*   Updated: 2019/06/03 12:41:58 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memrealloc(void *buff, size_t end, size_t init)
 {
-	char	*dsti;
-	char	*srci;
+	char	*res;
+	int		i;
 
-	dsti = (char *)dst;
-	srci = (char *)src;
-	if (n == 0 || (dst == NULL && src == NULL))
-		return (dst);
-	while (--n > 0)
-		dsti[n] = srci[n];
-	dsti[0] = srci[0];
-	return (dst);
+	if (!(res = malloc(end)))
+		return (NULL);
+	i = -1;
+	res = ft_memcpy(res, buff, init);
+	ft_bzero(res + i, ((long)(end - init) < 0 ? 0 : end - init));
+	free(buff);
+	return (res);
 }
