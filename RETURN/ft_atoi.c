@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 12:15:09 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 19:35:05 by mescande         ###   ########.fr       */
+/*   Updated: 2019/11/06 16:29:10 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int			ft_atoi(const char *str)
 {
-	long long	i;
-	long long	j;
-	long long	res;
+	int	i;
+	int	j;
+	int	res;
 
 	i = 0;
 	j = 1;

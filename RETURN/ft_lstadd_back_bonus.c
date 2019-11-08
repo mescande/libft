@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 12:06:44 by mescande          #+#    #+#             */
-/*   Updated: 2019/11/08 15:38:41 by mescande         ###   ########.fr       */
+/*   Created: 2019/11/04 14:11:07 by mescande          #+#    #+#             */
+/*   Updated: 2019/11/07 16:09:29 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_lstadd_back(t_list **last, t_list *new)
 {
-	size_t pos;
+	t_list	*tmp;
 
-	pos = 0;
-	if (!s1 || n == 0 || !s2)
-		return (0);
-	while ((unsigned char)s1[pos] == (unsigned char)s2[pos] &&
-			s1[pos] != '\0' && pos < n)
-		pos++;
-	if (s1[pos] == '\0' || pos == n)
+	if (!new || !last)
+		return ;
+	if (!(*last))
 	{
-		if (s2[pos] == '\0' || pos == n)
-			return (0);
-		return (-1);
+		*last = new;
+		return ;
 	}
-	return ((unsigned char)s1[pos] - (unsigned char)s2[pos]);
+	tmp = ft_lstlast(*last);
+	tmp->next = new;
+	tmp->next->next = NULL;
+	tmp->next->content = new->content;
+	return ;
 }

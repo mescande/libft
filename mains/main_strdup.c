@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdone.c                                       :+:      :+:    :+:   */
+/*   main_strdup.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lcalendi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/09 17:02:15 by mescande          #+#    #+#             */
-/*   Updated: 2019/11/04 12:57:45 by mescande         ###   ########.fr       */
+/*   Created: 2019/10/30 21:03:40 by lcalendi          #+#    #+#             */
+/*   Updated: 2019/11/07 16:41:49 by lcalendi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 
-void	ft_lstdelone(t_list **lst, void (*del)(void *))
+void main_strdup()
 {
-	del((*lst)->content);
-	free(*lst);
-	*lst = NULL;
-	return ;
+	//ft_strdup(NULL);
+	//strdup(NULL);
+	ft_strdup("");
+	strdup("");
 }

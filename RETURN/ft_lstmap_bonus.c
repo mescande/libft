@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 12:06:44 by mescande          #+#    #+#             */
-/*   Updated: 2019/11/08 15:38:41 by mescande         ###   ########.fr       */
+/*   Created: 2019/04/09 19:20:42 by mescande          #+#    #+#             */
+/*   Updated: 2019/11/07 17:21:02 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t pos;
+	t_list *res;
 
-	pos = 0;
-	if (!s1 || n == 0 || !s2)
-		return (0);
-	while ((unsigned char)s1[pos] == (unsigned char)s2[pos] &&
-			s1[pos] != '\0' && pos < n)
-		pos++;
-	if (s1[pos] == '\0' || pos == n)
+	if (lst == NULL || !(res = ft_lstnew(f(lst->content))))
+		return (NULL);
+	if (lst->next != NULL)
 	{
-		if (s2[pos] == '\0' || pos == n)
-			return (0);
-		return (-1);
+		res->next = ft_lstmap(lst->next, f, del);
+		if (res->next == NULL)
+		{
+			ft_lstdelone(res, del);
+			return (NULL);
+		}
 	}
-	return ((unsigned char)s1[pos] - (unsigned char)s2[pos]);
+	return (res);
 }

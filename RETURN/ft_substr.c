@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 12:06:44 by mescande          #+#    #+#             */
-/*   Updated: 2019/11/08 15:38:41 by mescande         ###   ########.fr       */
+/*   Created: 2019/04/05 15:18:34 by mescande          #+#    #+#             */
+/*   Updated: 2019/11/06 16:12:26 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	size_t pos;
+	size_t	l;
+	char	*res;
+	size_t	i;
 
-	pos = 0;
-	if (!s1 || n == 0 || !s2)
+	if (s == NULL)
+		return (NULL);
+	res = ft_strnew(len);
+	if (!res)
 		return (0);
-	while ((unsigned char)s1[pos] == (unsigned char)s2[pos] &&
-			s1[pos] != '\0' && pos < n)
-		pos++;
-	if (s1[pos] == '\0' || pos == n)
+	i = 0;
+	l = ft_strlen(s);
+	while (i < len && start + i < l)
 	{
-		if (s2[pos] == '\0' || pos == n)
-			return (0);
-		return (-1);
+		res[i] = s[start + i];
+		i++;
 	}
-	return ((unsigned char)s1[pos] - (unsigned char)s2[pos]);
+	res[len] = '\0';
+	return (res);
 }

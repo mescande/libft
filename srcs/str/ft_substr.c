@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 12:06:44 by mescande          #+#    #+#             */
-/*   Updated: 2019/11/08 15:38:41 by mescande         ###   ########.fr       */
+/*   Created: 2019/11/05 18:12:42 by mescande          #+#    #+#             */
+/*   Updated: 2019/11/05 18:25:44 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	size_t pos;
+	char	*res;
+	size_t	i;
 
-	pos = 0;
-	if (!s1 || n == 0 || !s2)
-		return (0);
-	while ((unsigned char)s1[pos] == (unsigned char)s2[pos] &&
-			s1[pos] != '\0' && pos < n)
-		pos++;
-	if (s1[pos] == '\0' || pos == n)
+	if (!len || !s || !(res = ft_memalloc(len * sizeof(char))))
+		return (NULL);
+	while (s[start + i] && i < len)
 	{
-		if (s2[pos] == '\0' || pos == n)
-			return (0);
-		return (-1);
+		res[i] = s[start + i];
 	}
-	return ((unsigned char)s1[pos] - (unsigned char)s2[pos]);
+	return (res);
 }

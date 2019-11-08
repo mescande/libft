@@ -6,7 +6,7 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2019/06/03 14:48:26 by mescande         ###   ########.fr        #
+#    Updated: 2019/11/05 18:57:03 by mescande         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,13 +38,17 @@ SRC_LIST = main.c\
 		   chr/ft_isxdigit.c\
 		   chr/ft_tolower.c\
 		   chr/ft_toupper.c\
-		   lst/ft_lstadd.c\
-		   lst/ft_lstdel.c\
+		   lst/ft_lstadd_back.c
+		   lst/ft_lstadd_front.c\
+		   lst/ft_lstclear.c\
 		   lst/ft_lstdelone.c\
 		   lst/ft_lstiter.c\
+		   lst/ft_lstlast.c\
 		   lst/ft_lstmap.c\
 		   lst/ft_lstnew.c\
+		   lst/ft_lstsize.c\
 		   mem/ft_bzero.c\
+		   mem/ft_calloc\
 		   mem/ft_memalloc.c\
 		   mem/ft_memccpy.c\
 		   mem/ft_memchr.c\
@@ -77,6 +81,7 @@ SRC_LIST = main.c\
 		   str/ft_striteri.c\
 		   str/ft_strjoin.c\
 		   str/ft_strlcat.c\
+		   str/ft_strlcpy\
 		   str/ft_strlen.c\
 		   str/ft_strmap.c\
 		   str/ft_strmapi.c\
@@ -91,7 +96,8 @@ SRC_LIST = main.c\
 		   str/ft_strstr.c\
 		   str/ft_strsub.c\
 		   str/ft_strtok.c\
-		   str/ft_strtrim.c
+		   str/ft_strtrim.c\
+		   str/ft_substr\
 		   
 SRC = $(addprefix $(SRC_DIR), $(SRC_LIST))
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_LIST:.c=.o))

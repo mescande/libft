@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 12:06:44 by mescande          #+#    #+#             */
-/*   Updated: 2019/11/08 15:38:41 by mescande         ###   ########.fr       */
+/*   Created: 2019/04/09 19:17:30 by mescande          #+#    #+#             */
+/*   Updated: 2019/11/07 16:30:54 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t pos;
-
-	pos = 0;
-	if (!s1 || n == 0 || !s2)
-		return (0);
-	while ((unsigned char)s1[pos] == (unsigned char)s2[pos] &&
-			s1[pos] != '\0' && pos < n)
-		pos++;
-	if (s1[pos] == '\0' || pos == n)
-	{
-		if (s2[pos] == '\0' || pos == n)
-			return (0);
-		return (-1);
-	}
-	return ((unsigned char)s1[pos] - (unsigned char)s2[pos]);
+	if (lst == NULL)
+		return ;
+	f(lst->content);
+	if (lst->next != NULL)
+		ft_lstiter(lst->next, f);
+	return ;
 }

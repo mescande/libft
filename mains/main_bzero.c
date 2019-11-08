@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdone.c                                       :+:      :+:    :+:   */
+/*   main_bzero.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lcalendi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/09 17:02:15 by mescande          #+#    #+#             */
-/*   Updated: 2019/11/04 12:57:45 by mescande         ###   ########.fr       */
+/*   Created: 2019/10/22 18:17:42 by lcalendi          #+#    #+#             */
+/*   Updated: 2019/11/01 17:33:24 by lcalendi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
-#include <stdlib.h>
+#include <string.h>
 
-void	ft_lstdelone(t_list **lst, void (*del)(void *))
+void main_bzero()
 {
-	del((*lst)->content);
-	free(*lst);
-	*lst = NULL;
-	return ;
+	char dst[1];
+	ft_bzero(NULL, 0);
+	bzero(NULL, (0));
+	//ft_bzero(NULL, 1);
+	//bzero(NULL, (1));
+	ft_bzero(dst, 0);
+	bzero(dst, (0));
+	//ft_bzero(dst, 10);
+	//bzero(dst, (10));
 }

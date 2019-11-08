@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 12:06:44 by mescande          #+#    #+#             */
-/*   Updated: 2019/11/08 15:38:41 by mescande         ###   ########.fr       */
+/*   Created: 2019/11/04 12:58:32 by mescande          #+#    #+#             */
+/*   Updated: 2019/11/06 17:55:08 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int		ft_lstsize(t_list *lst)
 {
-	size_t pos;
+	int	i;
 
-	pos = 0;
-	if (!s1 || n == 0 || !s2)
+	if (!lst)
 		return (0);
-	while ((unsigned char)s1[pos] == (unsigned char)s2[pos] &&
-			s1[pos] != '\0' && pos < n)
-		pos++;
-	if (s1[pos] == '\0' || pos == n)
+	i = 1;
+	while (lst->next)
 	{
-		if (s2[pos] == '\0' || pos == n)
-			return (0);
-		return (-1);
+		i++;
+		lst = lst->next;
 	}
-	return ((unsigned char)s1[pos] - (unsigned char)s2[pos]);
+	return (i);
 }
