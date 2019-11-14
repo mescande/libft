@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 12:06:44 by mescande          #+#    #+#             */
-/*   Updated: 2019/11/08 15:38:41 by mescande         ###   ########.fr       */
+/*   Updated: 2019/11/12 10:18:19 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t pos;
 
 	pos = 0;
-	if (!s1 || n == 0 || !s2)
+	if (n == 0)
 		return (0);
 	while ((unsigned char)s1[pos] == (unsigned char)s2[pos] &&
 			s1[pos] != '\0' && pos < n)

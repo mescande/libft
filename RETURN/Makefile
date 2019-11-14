@@ -6,7 +6,7 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2019/11/07 18:26:21 by mescande         ###   ########.fr        #
+#    Updated: 2019/11/14 10:33:36 by mescande         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,6 +94,7 @@ fclean: clean
 re: fclean
 	$(MAKE)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
 
 -include $(OBJ:.o=.d)
+-include $(OBJ_BNS:.o=.d)
