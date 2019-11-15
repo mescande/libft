@@ -6,7 +6,7 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2019/11/05 18:57:03 by mescande         ###   ########.fr        #
+#    Updated: 2019/11/15 14:51:01 by mescande         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ SRC_LIST = main.c\
 		   chr/ft_isxdigit.c\
 		   chr/ft_tolower.c\
 		   chr/ft_toupper.c\
-		   lst/ft_lstadd_back.c
+		   lst/ft_lstadd_back.c\
 		   lst/ft_lstadd_front.c\
 		   lst/ft_lstclear.c\
 		   lst/ft_lstdelone.c\
@@ -48,7 +48,7 @@ SRC_LIST = main.c\
 		   lst/ft_lstnew.c\
 		   lst/ft_lstsize.c\
 		   mem/ft_bzero.c\
-		   mem/ft_calloc\
+		   mem/ft_calloc.c\
 		   mem/ft_memalloc.c\
 		   mem/ft_memccpy.c\
 		   mem/ft_memchr.c\
@@ -81,7 +81,7 @@ SRC_LIST = main.c\
 		   str/ft_striteri.c\
 		   str/ft_strjoin.c\
 		   str/ft_strlcat.c\
-		   str/ft_strlcpy\
+		   str/ft_strlcpy.c\
 		   str/ft_strlen.c\
 		   str/ft_strmap.c\
 		   str/ft_strmapi.c\
@@ -97,7 +97,7 @@ SRC_LIST = main.c\
 		   str/ft_strsub.c\
 		   str/ft_strtok.c\
 		   str/ft_strtrim.c\
-		   str/ft_substr\
+		   str/ft_substr.c\
 		   
 SRC = $(addprefix $(SRC_DIR), $(SRC_LIST))
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_LIST:.c=.o))
@@ -107,11 +107,11 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(CC) $(FLAGS) $^ -o $@
-	@echo "$(_GREEN)Done !$(_WHITE)$(NAME)"
+	@echo "$(_BLUE)Compilation $(_GREEN)DONE !$(_WHITE)\r"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(DIR)
 	@$(CC) $(FLAGS) -MMD -c $< -o $@ -I $(INC_DIR)
-	@echo "$(_GREEN)[OK] $(_BLUE)Compilation... $(_WHITE)"
+	@echo -n "\r$(_BLUE)Compilation... $(_WHITE)"
 
 $(DIR):
 	@mkdir -p $@

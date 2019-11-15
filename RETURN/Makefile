@@ -6,9 +6,15 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2019/11/14 10:33:36 by mescande         ###   ########.fr        #
+#    Updated: 2019/11/14 17:05:29 by mescande         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+_WHITE=$ \x1b[37m
+_BLUE=$ \x1b[36m
+_GREEN=$ \033[1;32m
+_GREY=$ \x1b[33m
+_RED=$ \x1b[31m
 
 NAME = libft.a
 CC = gcc
@@ -56,16 +62,20 @@ SRC_LIST = ft_isalnum.c\
 		   ft_strtrim.c\
 		   ft_substr.c
 
-BNS_LIST = ft_lstadd_back_bonus.c\
-		   ft_lstadd_front_bonus.c\
-		   ft_lstclear_bonus.c\
-		   ft_lstdelone_bonus.c\
-		   ft_lstiter_bonus.c\
-		   ft_lstlast_bonus.c\
-		   ft_lstmap_bonus.c\
-		   ft_lstnew_bonus.c\
-		   ft_lstsize_bonus.c
+BNS_LIST = ft_lstadd_back.c\
+		   ft_lstadd_front.c\
+		   ft_lstclear.c\
+		   ft_lstdelone.c\
+		   ft_lstiter.c\
+		   ft_lstlast.c\
+		   ft_lstmap.c\
+		   ft_lstnew.c\
+		   ft_lstsize.c
 
+
+ifdef BONUS
+	SRC_LIST+=$(BNS_LIST)
+endif
 SRC = $(addprefix $(SRC_DIR), $(SRC_LIST))
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_LIST:.c=.o))
 OBJ_BNS = $(addprefix $(OBJ_DIR), $(BNS_LIST:.c=.o))
@@ -74,7 +84,8 @@ DIR = $(sort $(dir $(OBJ)))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
+	@echo "$(_GREEN)Done !$(_WHITE)$(NAME)"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(DIR)
 	@$(CC) $(FLAGS) -MMD -c $< -o $@ -I $(INC_DIR)
@@ -82,17 +93,19 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(DIR)
 $(DIR):
 	@mkdir -p $@
 
-bonus: $(OBJ) $(OBJ_BNS)
-	ar rcs $(NAME) $(OBJ) $(OBJ_BNS)
+bonus: 
+	@$(MAKE) BONUS=true
 
 clean:
-	rm -rf $(OBJ_DIR)
+	@rm -rf $(OBJ_DIR)
+	@echo "$(_WHITE)$@ $(_BLUE)Done !"
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
+	@echo "$(_WHITE)$@ $(_BLUE)Done !"
 
 re: fclean
-	$(MAKE)
+	@$(MAKE)
 
 .PHONY: all clean fclean re bonus
 

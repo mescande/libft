@@ -6,18 +6,26 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 14:11:07 by mescande          #+#    #+#             */
-/*   Updated: 2019/11/04 15:32:01 by mescande         ###   ########.fr       */
+/*   Updated: 2019/11/15 12:43:43 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_lstadd_back(t_list *alst, t_list *new)
-{
-	t_list *last;
+#include "libft.h"
 
-	if (!new | !alst)
+void	ft_lstadd_back(t_list **last, t_list *new)
+{
+	t_list	*tmp;
+
+	if (!new || !last)
 		return ;
-	last = ft_lstlast(*alst);
-	last.next = new;
-	new.next = NULL;
+	if (!(*last))
+	{
+		*last = new;
+		return ;
+	}
+	tmp = ft_lstlast(*last);
+	tmp->next = new;
+	tmp->next->next = NULL;
+	tmp->next->content = new->content;
 	return ;
 }
