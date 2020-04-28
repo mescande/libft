@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 11:34:25 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/13 18:12:12 by mescande         ###   ########.fr       */
+/*   Updated: 2020/04/28 16:41:17 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,8 @@ char		*ft_strtok(char *str, const char *sep)
 {
 	static char	*sttc_str;
 	size_t		len;
-	size_t		n;
 	char		*res;
 
-	n = 0;
 	len = 0;
 	if (str != NULL)
 		sttc_str = str;

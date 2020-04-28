@@ -6,25 +6,22 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2019/11/15 14:51:01 by mescande         ###   ########.fr        #
+#    Updated: 2020/04/28 16:40:18 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-_WHITE=$ \x1b[37m
-_BLUE=$ \x1b[36m
-_GREEN=$ \033[1;32m
-_GREY=$ \x1b[33m
-_RED=$ \x1b[31m
+NAME		=	libft.a 
 
-NAME = test
-CC = gcc
-FLAGS = -Wall -Werror -Wextra
+CC			=	gcc
+FLAGS		=	-Wall -Werror -Wextra
+
+LEN_NAME	=	`printf "%s" $(NAME) | wc -c`
+DELTA		=	$$(echo "$$(tput cols)-32-$(LEN_NAME)" | bc)
 
 SRC_DIR = srcs/
 OBJ_DIR = obj/
 INC_DIR = includes/
-SRC_LIST = main.c\
-		   chr/ft_isalnum.c\
+SRC_LIST = chr/ft_isalnum.c\
 		   chr/ft_isalpha.c\
 		   chr/ft_isascii.c\
 		   chr/ft_isblank.c\
@@ -97,34 +94,56 @@ SRC_LIST = main.c\
 		   str/ft_strsub.c\
 		   str/ft_strtok.c\
 		   str/ft_strtrim.c\
-		   str/ft_substr.c\
+		   str/ft_substr.c
 		   
-SRC = $(addprefix $(SRC_DIR), $(SRC_LIST))
-OBJ = $(addprefix $(OBJ_DIR), $(SRC_LIST:.c=.o))
-DIR = $(sort $(dir $(OBJ)))
+SRC			=	$(addprefix $(SRC_DIR), $(SRC_LIST))
+OBJ			=	$(addprefix $(OBJ_DIR), $(SRC_LIST:.c=.o))
+DIR			=	$(sort $(dir $(OBJ)))
+NB			=	$(words $(SRC_LIST))
+INDEX		=	0
 
-all: $(NAME)
+SHELL		:=	/bin/bash
 
-$(NAME): $(OBJ)
-	@$(CC) $(FLAGS) $^ -o $@
-	@echo "$(_BLUE)Compilation $(_GREEN)DONE !$(_WHITE)\r"
+all: 
+	@$(MAKE) -j $(NAME)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(DIR)
+$(NAME):		$(OBJ) Makefile
+	@ar rcs $(NAME) $@ 
+	@printf "\r\033[38;5;117m✓ MAKE $(NAME)\033[0m\033[K\n"
+
+$(OBJ_DIR)%.o:	$(SRC_DIR)%.c Makefile | $(DIR)
+	@$(eval DONE=$(shell echo $$(($(INDEX)*20/$(NB)))))
+	@$(eval PERCENT=$(shell echo $$(($(INDEX)*100/$(NB)))))
+	@$(eval TO_DO=$(shell echo $$((20-$(INDEX)*20/$(NB) - 1))))
+	@$(eval COLOR=$(shell list=(160 196 202 208 215 221 227 226 190 154 118 84 46); index=$$(($(PERCENT) * $${#list[@]} / 100)); echo "$${list[$$index]}"))
+	@printf "\r\033[38;5;%dm↻ [%s]: %2d%% `printf '█%.0s' {0..$(DONE)}`%*s❙%s\033[0m\033[K" $(COLOR) $(NAME) $(PERCENT) $(TO_DO) "" "$(shell echo "$@" | sed 's/^.*\/\(.*\).[och]$$/\1/')"
 	@$(CC) $(FLAGS) -MMD -c $< -o $@ -I $(INC_DIR)
-	@echo -n "\r$(_BLUE)Compilation... $(_WHITE)"
+	@$(eval INDEX=$(shell echo $$(($(INDEX)+1))))
 
 $(DIR):
 	@mkdir -p $@
 
+$(EXEC): all
+	@$(CC) $(FLAGS) -MMD -c main.c -o $@ -I $(INC_DIR)
+	@echo "Starting test :"
+	./test
+
 clean:
 	@rm -rf $(OBJ_DIR)
+
+aclean: clean
+	@rm -rf $(EXEC)
+	@rm -rf $(NAME)
+
+tclean: clean
+	@rm -rf $(EXEC)
 
 fclean: clean
 	@rm -rf $(NAME)
 
-re: fclean
+re: aclean
 	@$(MAKE)
 
-.PHONY: all clean fclean re
+.PHONY: all clean aclean tclean fclean re
 
 -include $(OBJ:.o=.d)
