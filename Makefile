@@ -6,7 +6,7 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2020/04/28 16:40:18 by user42           ###   ########.fr        #
+#    Updated: 2020/04/28 17:13:14 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,8 @@ SRC_LIST = chr/ft_isalnum.c\
 		   chr/ft_isxdigit.c\
 		   chr/ft_tolower.c\
 		   chr/ft_toupper.c\
+		   GNL/get_next_line.c\
+		   GNL/get_next_line_utils.c\
 		   lst/ft_lstadd_back.c\
 		   lst/ft_lstadd_front.c\
 		   lst/ft_lstclear.c\
@@ -55,6 +57,22 @@ SRC_LIST = chr/ft_isalnum.c\
 		   mem/ft_memmove.c\
 		   mem/ft_memrealloc.c\
 		   mem/ft_memset.c\
+		   printf/ft_atoi.c\
+		   printf/ft_bzero.c\
+		   printf/ft_conv_1.c\
+		   printf/ft_conv_2.c\
+		   printf/ft_gestionflags.c\
+		   printf/ft_itoa.c\
+		   printf/ft_memalloc.c\
+		   printf/ft_memcpy.c\
+		   printf/ft_memset.c\
+		   printf/ft_printf.c\
+		   printf/ft_putitin.c\
+		   printf/ft_strdup.c\
+		   printf/ft_strjoin.c\
+		   printf/ft_strlen.c\
+		   printf/ft_strnew.c\
+		   printf/ft_utoa_base.c\
 		   put/ft_putchar.c\
 		   put/ft_putchar_fd.c\
 		   put/ft_putendl.c\
