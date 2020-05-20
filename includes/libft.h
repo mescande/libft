@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 16:15:18 by mescande          #+#    #+#             */
-/*   Updated: 2019/11/15 14:37:59 by mescande         ###   ########.fr       */
+/*   Updated: 2020/05/17 10:03:39 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char			*ft_strjoin(const char *s1, const char *s2);
 char			*ft_strtrim(const char *s, const char *set);
 char			**ft_strsplit(const char *s, char c);
 char			*ft_substr(const char *s, unsigned int start, size_t len);
-char			*ft_itoa(int n);
+char			*ft_itoa(long int n);
 void			ft_putchar(char c);
 void			ft_putstr(const char *s);
 void			ft_putendl(const char *s);

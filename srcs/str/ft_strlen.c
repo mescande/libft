@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 18:23:22 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/08 11:27:19 by mescande         ###   ########.fr       */
+/*   Updated: 2020/05/17 10:16:20 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	size_t len;
 
 	len = 0;
-	while (s[len] != '\0')
+	while (s && s[len] != '\0')
 		len++;
 	return (len);
 }

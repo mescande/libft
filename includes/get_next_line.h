@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 21:07:45 by mescande          #+#    #+#             */
-/*   Updated: 2019/12/18 20:44:32 by mescande         ###   ########.fr       */
+/*   Updated: 2020/05/17 09:57:34 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,8 @@ typedef struct	s_buff
 	struct s_buff	*next;
 }				t_buff;
 
-char			*ft_strjoin(char *s1, char *s2);
+char			*ft_strgnljoin(char *s1, char *s2);
 char			*ft_strndup(char *s, int i);
-void			*ft_memalloc(size_t size);
 
 int				erasebuff(t_buff *buff);
 int				react(char **line, t_buff **buff, int val);

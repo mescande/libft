@@ -6,18 +6,18 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 19:01:40 by mescande          #+#    #+#             */
-/*   Updated: 2019/11/05 18:53:57 by mescande         ###   ########.fr       */
+/*   Updated: 2020/05/17 10:04:00 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long int n)
 {
-	char	*res;
-	size_t	len;
-	int		tmp;
-	int		neg;
+	char		*res;
+	size_t		len;
+	long int	tmp;
+	int			neg;
 
 	tmp = n;
 	if (n == 0 || n == -0)

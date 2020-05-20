@@ -6,7 +6,7 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2020/04/28 17:13:14 by user42           ###   ########.fr        #
+#    Updated: 2020/05/17 10:18:26 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,20 +58,12 @@ SRC_LIST = chr/ft_isalnum.c\
 		   mem/ft_memrealloc.c\
 		   mem/ft_memset.c\
 		   printf/ft_atoi.c\
-		   printf/ft_bzero.c\
 		   printf/ft_conv_1.c\
 		   printf/ft_conv_2.c\
 		   printf/ft_gestionflags.c\
-		   printf/ft_itoa.c\
-		   printf/ft_memalloc.c\
-		   printf/ft_memcpy.c\
-		   printf/ft_memset.c\
 		   printf/ft_printf.c\
 		   printf/ft_putitin.c\
-		   printf/ft_strdup.c\
 		   printf/ft_strjoin.c\
-		   printf/ft_strlen.c\
-		   printf/ft_strnew.c\
 		   printf/ft_utoa_base.c\
 		   put/ft_putchar.c\
 		   put/ft_putchar_fd.c\
@@ -109,7 +101,6 @@ SRC_LIST = chr/ft_isalnum.c\
 		   str/ft_strsplit.c\
 		   str/ft_strrchr.c\
 		   str/ft_strstr.c\
-		   str/ft_strsub.c\
 		   str/ft_strtok.c\
 		   str/ft_strtrim.c\
 		   str/ft_substr.c

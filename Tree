@@ -1,0 +1,107 @@
+.
+├── includes
+│   ├── ft_printf.h
+│   ├── get_next_line.h
+│   └── libft.h
+├── Makefile
+└── srcs
+    ├── chr
+    │   ├── ft_isalnum.c
+    │   ├── ft_isalpha.c
+    │   ├── ft_isascii.c
+    │   ├── ft_isblank.c
+    │   ├── ft_iscntrl.c
+    │   ├── ft_isdigit.c
+    │   ├── ft_isgraph.c
+    │   ├── ft_islower.c
+    │   ├── ft_isprint.c
+    │   ├── ft_isspace.c
+    │   ├── ft_isupper.c
+    │   ├── ft_isxdigit.c
+    │   ├── ft_tolower.c
+    │   └── ft_toupper.c
+    ├── GNL
+    │   ├── get_next_line.c			GNL
+    │   └── get_next_line_utils.c
+    ├── lst
+    │   ├── ft_lstadd_back.c		Add an elem at the end of the list
+    │   ├── ft_lstadd_front.c		Add an elem at the begining of the list
+    │   ├── ft_lstclear.c			Erase and free all the list
+    │   ├── ft_lstdelone.c			Erase and free one elem of the list
+    │   ├── ft_lstiter.c			Apply a fonction on each elem of the list
+    │   ├── ft_lstlast.c			Return the last elem of the list
+    │   ├── ft_lstmap.c				Return a new list by applying a fct to elems
+    │   ├── ft_lstnew.c				Return a new list
+    │   └── ft_lstsize.c			Return the size of a list
+    ├── mem
+    │   ├── ft_bzero.c				Set n bytes to 0
+    │   ├── ft_memalloc.c			Return a new allocated 0 setted tab
+    │   ├── ft_calloc.c				Return same but from number and size of elem
+    │   ├── ft_memccpy.c			Copies max N bytes, stop when C is found
+    │   ├── ft_memchr.c				Return pos of C in th N first bytes of src
+    │   ├── ft_memcmp.c				Return the first diference between S1 and s2
+    │   ├── ft_memcpy.c				Copies N bytes from src to dst
+    │   ├── ft_memdel.c				Free and set to null a pointer
+    │   ├── ft_memmove.c			Copies by taking overlap in question
+    │   ├── ft_memrealloc.c			Realloc and set to 0 the new space
+    │   └── ft_memset.c				Set n bytes to C
+    ├── printf
+    │   ├── ft_atoi.c
+    │   ├── ft_bzero.c
+    │   ├── ft_conv_1.c
+    │   ├── ft_conv_2.c
+    │   ├── ft_gestionflags.c
+    │   ├── ft_itoa.c
+    │   ├── ft_memalloc.c
+    │   ├── ft_memcpy.c
+    │   ├── ft_memset.c
+    │   ├── ft_printf.c				PRINTF
+    │   ├── ft_putitin.c
+    │   ├── ft_strdup.c
+    │   ├── ft_strjoin.c
+    │   ├── ft_strlen.c
+    │   ├── ft_strnew.c
+    │   └── ft_utoa_base.c
+    ├── put
+    │   ├── ft_putchar.c			Write one char
+    │   ├── ft_putchar_fd.c			Write one char in a fd
+    │   ├── ft_putendl.c
+    │   ├── ft_putendl_fd.c
+    │   ├── ft_putnbr.c
+    │   ├── ft_putnbr_fd.c
+    │   ├── ft_putstr.c
+    │   ├── ft_putstr_fd.c
+    │   └── ft_putstrstr.c
+    └── str
+        ├── ft_atoi.c				Return an int from a string
+        ├── ft_itoa.c				Return a string from an int
+        ├── ft_strcat.c				Concatenate S1 with S2 in S1
+        ├── ft_strchr.c				Return the pos of first C in S
+        ├── ft_strclr.c				Clear a string
+        ├── ft_strcmp.c				Return the difference between S1 and S2
+        ├── ft_strcpy.c				Copy src in dest
+        ├── ft_strdel.c				Free and set to null the pointer
+        ├── ft_strdup.c				Return a new string and copy s1 in it
+        ├── ft_strequ.c				Return (s1 == s2)
+        ├── ft_striter.c			Apply a fct on each char
+        ├── ft_striteri.c			Same as ^ but give also the # of char in str
+        ├── ft_strjoin.c			Return a catenated string s3 from s1 and s2
+        ├── ft_strlcat.c			Same as car but on N char max
+        ├── ft_strlcpy.c			Same as cpy but on N char max
+        ├── ft_strlen.c				Return the lenght of a string
+        ├── ft_strmap.c				Return a new string by apply a fct on chars
+        ├── ft_strmapi.c			Same as ^ but give also the # of char in str
+        ├── ft_strncat.c			Same as cat but on N char of S2 max
+        ├── ft_strncmp.c			Same as cmp but on N char max
+        ├── ft_strncpy.c			Same as cpy but on N char of s2 max
+        ├── ft_strnequ.c			Same as equ but on N char max
+        ├── ft_strnew.c				Return a new allocated 0 setted string
+        ├── ft_strnstr.c			Same as strstr but in the len first char
+        ├── ft_strrchr.c			Return the pos of last C in S
+        ├── ft_strsplit.c			Return a tab of tab of a str splitted by C
+        ├── ft_strstr.c				Return the 1st occurence of s2
+        ├── ft_strtok.c				Retrun a string at each call splited by seps
+        ├── ft_strtrim.c			Return a string without seps begin and end
+        └── ft_substr.c				Return a new str cpy from s[start] of len N
+
+9 directories, 98 files
