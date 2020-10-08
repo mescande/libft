@@ -18,6 +18,5 @@ void	ft_putendl_fd(const char *s, int fd)
 	if (s == NULL)
 		return ;
 	ft_putstr_fd(s, fd);
-	write(fd, "\n", 1);
-	return ;
+	ft_putchar_fd('\n', fd);
 }
