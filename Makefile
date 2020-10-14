@@ -6,13 +6,13 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2020/10/10 14:58:19 by user42           ###   ########.fr        #
+#    Updated: 2020/10/14 15:10:49 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	libft.a 
 
-CC			=	gcc
+CC			=	clang
 FLAGS		=	-Wall -Werror -Wextra
 
 LEN_NAME	=	`printf "%s" $(NAME) | wc -c`
@@ -112,7 +112,7 @@ DIR			=	$(sort $(dir $(OBJ)))
 NB			=	$(words $(SRC_LIST))
 INDEX		=	0
 
-SHELL		:=	/bin/bash
+#SHELL		:=	/bin/bash
 
 all: 
 	@$(MAKE) -j $(NAME)

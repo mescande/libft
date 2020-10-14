@@ -76,12 +76,14 @@ int		wichflag(int *flags)
 int		printit(t_plist *start)
 {
 	int		res;
+	int 	trash;
 	t_plist	*tmp;
 
+	(void) trash;
 	res = 0;
 	while (start)
 	{
-		write(1, start->str, start->len);
+		trash = write(1, start->str, start->len);
 		res += start->len;
 		tmp = start;
 		start = start->next;

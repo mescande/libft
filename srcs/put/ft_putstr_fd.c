@@ -15,8 +15,10 @@
 
 void	ft_putstr_fd(const char *s, int fd)
 {
+	int trash;
+
 	if (s == NULL)
 		return ;
-	write(fd, s, ft_strlen(s));
-	return ;
+	(void)trash;
+	trash = write(fd, s, ft_strlen(s));
 }
