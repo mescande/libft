@@ -6,7 +6,7 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2020/05/17 10:18:26 by user42           ###   ########.fr        #
+#    Updated: 2020/10/10 14:58:19 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,6 +75,7 @@ SRC_LIST = chr/ft_isalnum.c\
 		   put/ft_putstr_fd.c\
 		   put/ft_putstrstr.c\
 		   str/ft_atoi.c\
+		   str/ft_atof.c\
 		   str/ft_itoa.c\
 		   str/ft_strcat.c\
 		   str/ft_strchr.c\
@@ -117,7 +118,7 @@ all:
 	@$(MAKE) -j $(NAME)
 
 $(NAME):		$(OBJ) Makefile
-	@ar rcs $(NAME) $@ 
+	@ar rcs $(NAME) $(OBJ) 
 	@printf "\r\033[38;5;117m✓ MAKE $(NAME)\033[0m\033[K\n"
 
 $(OBJ_DIR)%.o:	$(SRC_DIR)%.c Makefile | $(DIR)
