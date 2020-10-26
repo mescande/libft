@@ -6,7 +6,7 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2020/10/22 14:53:58 by user42           ###   ########.fr        #
+#    Updated: 2020/10/26 16:14:23 by mescande         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ SRC_LIST = chr/ft_isalnum.c\
 		   printf/ft_atoi.c\
 		   printf/ft_conv_1.c\
 		   printf/ft_conv_2.c\
+		   printf/ft_fprintf.c\
 		   printf/ft_gestionflags.c\
 		   printf/ft_printf.c\
 		   printf/ft_putitin.c\

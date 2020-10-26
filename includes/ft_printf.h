@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 16:17:15 by mescande          #+#    #+#             */
-/*   Updated: 2020/05/17 10:18:22 by user42           ###   ########.fr       */
+/*   Updated: 2020/10/26 16:47:25 by mescande         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,7 @@ t_plist			*addchar(t_plist *lst, char c);
 t_plist			**addstr(t_plist **lst, char *str);
 int				workonstr(const char *str, int i, va_list args, t_plist **lst);
 int				ft_printf(const char *str, ...);
+
+int				ft_fprintf(int fd, const char *str, ...);
 
 #endif
