@@ -6,13 +6,13 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2020/10/15 12:26:50 by user42           ###   ########.fr        #
+#    Updated: 2020/10/22 14:53:58 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	libft.a 
 
-CC			=	clang-9
+CC			=	gcc
 FLAGS		=	-Wall -Werror -Wextra
 
 LEN_NAME	=	`printf "%s" $(NAME) | wc -c`
