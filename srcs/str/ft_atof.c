@@ -6,13 +6,14 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:04:55 by user42            #+#    #+#             */
-/*   Updated: 2020/10/09 16:33:31 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/12 13:10:19 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdio.h"
 
-static double	exponential(double res, int e)
+static double	exponential(double res, int e, int sign)
 {
 	while (e > 0)
 	{
@@ -24,7 +25,7 @@ static double	exponential(double res, int e)
 		res *= 0.1;
 		e++;
 	}
-	return (res);
+	return (res * sign);
 }
 
 double			ft_atof(const char *str)
@@ -36,12 +37,14 @@ double			ft_atof(const char *str)
 
 	e = 0;
 	res = 0.0;
+	sign = (*str == '-' ? -1 : 1);
+	str += (sign < 0 || *str == '+' ? 1 : 0);
 	while (*str != 0 && ft_isdigit(*str))
 		res = res * 10 + (*str++ - '0');
 	if (*str == '.')
 		while (*str != 0 && ft_isdigit(*str))
 			res = res * 10 + (*str++ - '0') + (--e == 0);
-	if (*str == 'e' || *str == 'E')
+	if (*str++ == 'e')
 	{
 		if (*str == '+')
 			sign = 1 + (str++ == 0);
@@ -51,5 +54,5 @@ double			ft_atof(const char *str)
 			i = i * 10 + (*str++ - '0');
 		e += i * sign;
 	}
-	return (exponential(res, e));
+	return (exponential(res, e, sign));
 }
