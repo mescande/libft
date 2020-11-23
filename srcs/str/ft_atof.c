@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:04:55 by user42            #+#    #+#             */
-/*   Updated: 2020/11/12 13:10:19 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/16 16:58:42 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static double	exponential(double res, int e, int sign)
 		res *= 10;
 		e--;
 	}
-	while (e > 0)
+	while (e < 0)
 	{
 		res *= 0.1;
 		e++;
@@ -41,12 +41,12 @@ double			ft_atof(const char *str)
 	str += (sign < 0 || *str == '+' ? 1 : 0);
 	while (*str != 0 && ft_isdigit(*str))
 		res = res * 10 + (*str++ - '0');
-	if (*str == '.')
+	if (*str++ == '.')
 		while (*str != 0 && ft_isdigit(*str))
 			res = res * 10 + (*str++ - '0') + (--e == 0);
-	if (*str++ == 'e')
+	if (*str == 'e' || *str - 1 == 'e')
 	{
-		if (*str == '+')
+		if (*(++str) == '+')
 			sign = 1 + (str++ == 0);
 		else if (*str == '-')
 			sign = -1 + (str++ == 0);
