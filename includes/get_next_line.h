@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 21:07:45 by mescande          #+#    #+#             */
-/*   Updated: 2020/05/17 09:57:34 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/06 12:41:20 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct	s_buff
+typedef struct s_buff
 {
 	int				fd;
 	char			*buff;
@@ -28,6 +28,7 @@ typedef struct	s_buff
 	struct s_buff	*next;
 }				t_buff;
 
+int				alloc(void **dst, size_t n);
 char			*ft_strgnljoin(char *s1, char *s2);
 char			*ft_strndup(char *s, int i);
 

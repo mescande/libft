@@ -6,18 +6,16 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 16:15:18 by mescande          #+#    #+#             */
-/*   Updated: 2020/10/09 16:32:09 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/05 14:16:01 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define SIGN(Value)	(Value < 0 ? -1 : 1)
-
 # include <string.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -49,8 +47,7 @@ size_t			ft_strlen(const char *s);
 char			*ft_strncat(char *s1, const char *s2, size_t n);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strncpy(char *dst, const char *src, size_t len);
-char			*ft_strnstr(const char *haystack, const char *needle,
-		size_t len);
+char			*ft_strnstr(const char *h, const char *n, size_t len);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strstr(const char *haystack, const char *needle);
 int				ft_tolower(int c);

@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 16:17:15 by mescande          #+#    #+#             */
-/*   Updated: 2020/10/26 16:47:25 by mescande         ###   ########.fr       */
+/*   Updated: 2021/01/05 14:05:02 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ enum			e_flags
 	VPREC,
 };
 
-typedef struct	s_plist
+typedef struct s_plist
 {
 	char			*str;
 	int				len;

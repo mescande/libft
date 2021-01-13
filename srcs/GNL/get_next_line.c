@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 16:37:21 by mescande          #+#    #+#             */
-/*   Updated: 2020/05/17 09:55:14 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/06 15:50:47 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** 0 : continue la lecture // 2 : \n atteint // 1 : -1 atteint
 */
 
-int		erasebuff(t_buff *buff)
+int	erasebuff(t_buff *buff)
 {
 	int	i;
 	int	j;
@@ -34,11 +34,16 @@ int		erasebuff(t_buff *buff)
 	j = -1;
 	i++;
 	while (buff->buff[++j])
-		buff->buff[j] = (i + j > BUFFER_SIZE ? 0 : buff->buff[i + j]);
+	{
+		if (i + j > BUFFER_SIZE)
+			buff->buff[j] = 0;
+		else
+			buff->buff[j] = buff->buff[i + j];
+	}
 	return (ret);
 }
 
-int		react(char **line, t_buff **buff, int val)
+int	react(char **line, t_buff **buff, int val)
 {
 	t_buff	*tmp;
 
@@ -66,7 +71,7 @@ int		react(char **line, t_buff **buff, int val)
 
 t_buff	*binit(t_buff *buff, int fd, t_buff *prev)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (buff)
@@ -75,38 +80,47 @@ t_buff	*binit(t_buff *buff, int fd, t_buff *prev)
 			buff = buff->prev;
 		while (i == 0 && fd != buff->fd && buff->next)
 			buff = buff->next;
-		if (buff->fd != fd && (i += 1))
+		if (buff->fd != fd && i++)
 			prev = buff;
 	}
 	if (!buff || i == 1)
 	{
-		if (!(buff = (t_buff *)ft_memalloc(sizeof(t_buff))) ||
-				!(buff->buff = (char *)ft_memalloc(BUFFER_SIZE + 1)))
+		if (!(alloc((void **)&buff, sizeof(t_buff)))
+			|| (alloc((void **)&buff->buff, BUFFER_SIZE + 1)))
 			return (NULL);
 		buff->fd = fd;
 		buff->prev = prev;
-		if (!(buff->next = NULL) && prev)
+		buff->next = NULL;
+		if (prev)
 			prev->next = buff;
 		buff->buff[BUFFER_SIZE] = 0;
 	}
 	return (buff);
 }
 
-int		get_next_line(int fd, char **line)
+int	assign(void **dst, void *value)
+{
+	*dst = value;
+	if (dst)
+		return (1);
+	return (0);
+}
+
+int	get_next_line(int fd, char **line)
 {
 	static t_buff	*buff = NULL;
 	int				red;
 
-	if (!line || !(*line = ft_strndup("", 0)) || fd < 0 || BUFFER_SIZE <= 0 ||
-			!(buff = binit(buff, fd, buff)))
+	if (!line || !(assign((void **)line, ft_strndup("", 0))) || BUFFER_SIZE <= 0
+		|| fd < 0 || !(assign((void **)&buff, binit(buff, fd, buff))))
 		return (react(line, &buff, -1));
 	if (buff->buff[0])
 	{
 		*line = ft_strgnljoin(*line, buff->buff);
-		if ((red = erasebuff(buff)))
+		if (assint((void **)red, erasebuff(buff)))
 			return (react(line, &buff, red - 1));
 	}
-	while ((red = read(fd, buff->buff, BUFFER_SIZE)))
+	while (assint((void **)red, read(fd, buff->buff, BUFFER_SIZE)))
 	{
 		if (red == -1)
 			return (react(line, &buff, -1));

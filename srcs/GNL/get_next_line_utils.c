@@ -6,11 +6,19 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 22:45:38 by mescande          #+#    #+#             */
-/*   Updated: 2020/05/17 09:54:20 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/06 16:16:56 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+int		alloc(void **dst, size_t n)
+{
+	*dst = malloc(n);
+	if (*dst == NULL)
+		return (0);
+	return (1);
+}
 
 void	cpy(char *res, char *s2, int i, int j)
 {
@@ -33,7 +41,7 @@ char	*ft_strgnljoin(char *s1, char *s2)
 	j = 0;
 	while (s2[j] != '\n' && s2[j] != -1 && s2[j])
 		j++;
-	if (!(res = (char *)malloc(i + j + 1)))
+	if (!(alloc(&res, i + j + 1)))
 		return (0);
 	res[i + j] = 0;
 	i = 0;
@@ -52,7 +60,7 @@ char	*ft_strndup(char *s, int i)
 {
 	char	*res;
 
-	if (!(res = (char *)malloc(i + 1)))
+	if (!(alloc(&res, i + 1)))
 		return (0);
 	res[i] = 0;
 	while (i-- > 0)
