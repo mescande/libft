@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:04:55 by user42            #+#    #+#             */
-/*   Updated: 2020/11/16 16:58:42 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/15 21:01:04 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ double			ft_atof(const char *str)
 	str += (sign < 0 || *str == '+' ? 1 : 0);
 	while (*str != 0 && ft_isdigit(*str))
 		res = res * 10 + (*str++ - '0');
-	if (*str++ == '.')
+	if (*str++ == '.' && !(i = 0))
 		while (*str != 0 && ft_isdigit(*str))
 			res = res * 10 + (*str++ - '0') + (--e == 0);
 	if (*str == 'e' || *str - 1 == 'e')
