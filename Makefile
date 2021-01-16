@@ -6,7 +6,7 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2020/10/26 16:14:23 by mescande         ###   ########.fr        #
+#    Updated: 2021/01/16 12:40:58 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,6 @@ SRC_LIST = chr/ft_isalnum.c\
 		   chr/ft_tolower.c\
 		   chr/ft_toupper.c\
 		   GNL/get_next_line.c\
-		   GNL/get_next_line_utils.c\
 		   lst/ft_lstadd_back.c\
 		   lst/ft_lstadd_front.c\
 		   lst/ft_lstclear.c\
