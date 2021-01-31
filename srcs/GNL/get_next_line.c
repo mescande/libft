@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/24 12:07:06 by mescande          #+#    #+#             */
-/*   Updated: 2019/04/30 14:11:17 by mescande         ###   ########.fr       */
+/*   Updated: 2021/01/31 03:00:16 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		end_in_buff(char *buff, int res, int i)
 	return (0);
 }
 
-int		returnvalue(char **buff, char **line)
+int		returnvalue(char *buff, char **line)
 {
 	int		i;
 	char	*tmp;
@@ -38,78 +38,52 @@ int		returnvalue(char **buff, char **line)
 	i = 0;
 	if (!(tmp = (char *)ft_memalloc(BUFF_SIZE + 1)))
 		return (end_in_buff(*line, -1, 1));
-	while (buff[0][i] != '\n' && buff[0][i] != -1)
+	while (buff[i] != '\n' && buff[i] != -1)
 	{
-		tmp[i] = buff[0][i];
+		tmp[i] = buff[i];
 		i++;
 	}
 	save = ft_strjoin(*line, tmp);
 	free(tmp);
 	free(*line);
 	*line = save;
-	if (buff[0][i] == -1 && i == 0)
-		return (end_in_buff(*buff, 0, 1));
-	len = ft_strlen(*buff);
-	*buff = ft_memmove((void *)(*buff), (void *)((*buff) + i + 1), len - i);
-	ft_bzero(buff[0] + len - i, (i + 1));
+	if (buff[i] == -1 && i == 0)
+		return (0);
+	len = ft_strlen(buff);
+	buff = ft_memmove((void *)(buff), (void *)((buff) + i + 1), len - i);
+	ft_bzero(buff + len - i, (i + 1));
 	return (1);
 }
 
-t_buff	*buffinit(int fd, t_buff *prev)
+int		gestionstruct(t_buff *buff, int fd)
 {
-	t_buff *new;
-
-	if (!(new = (t_buff *)malloc(sizeof(t_buff))))
-		return (NULL);
-	new->fd = fd;
-	if (!(new->buff = (char *)ft_memalloc(BUFF_SIZE + 1)))
-		return (NULL);
-	new->prev = prev;
-	new->next = NULL;
-	return (new);
-}
-
-int		gestionstruct(t_buff **buff, int fd)
-{
-	if (!(*buff))
-		if (!(*buff = buffinit(fd, NULL)))
-			return (1);
-	if ((*buff)->fd == fd)
-		return (0);
-	while ((*buff)->prev != NULL)
-		*buff = (*buff)->prev;
-	while ((*buff)->next != NULL && (*buff)->fd != fd)
-		*buff = (*buff)->next;
-	if ((*buff)->fd != fd)
-	{
-		if (!((*buff)->next = buffinit(fd, *buff)))
-			return (-1);
-		*buff = (*buff)->next;
-	}
+	ft_bzero(buff, sizeof(t_buff));
+	buff->fd = fd;
 	return (0);
 }
 
+
 int		get_next_line(const int fd, char **line)
 {
-	static t_buff	*buff;
+	static t_buff	buff;
 	char			*tmp;
 	ssize_t			val;
 
-	if ((val = 1) == 0 || !line || !(buff) || buff->fd != fd)
+	if ((val = 1) == 0 || !line || buff.fd != fd)
 		if (!line || gestionstruct(&buff, fd))
 			return (-1);
 	*line = ft_strnew(1);
-	while (buff->buff && val)
+	while (val)
 	{
-		if (end_in_buff(buff->buff, 0, 0))
-			return (returnvalue(&(buff->buff), line));
+		if (end_in_buff(buff.buff, 0, 0))
+			return (returnvalue((buff.buff), line));
 		else
 		{
-			tmp = ft_strjoin(*line, buff->buff);
+			tmp = ft_strjoin(*line, buff.buff);
 			free(*line);
 			*line = tmp;
-			ft_bzero(buff->buff, BUFF_SIZE + 1);
-			if ((val = read(fd, buff->buff, BUFF_SIZE)) == -1)
+			ft_bzero(buff.buff, BUFF_SIZE + 1);
+			if ((val = read(fd, buff.buff, BUFF_SIZE)) == -1)
 				return (end_in_buff(*line, -1, 1));
 		}
 	}
