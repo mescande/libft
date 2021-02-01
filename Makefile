@@ -6,7 +6,7 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2021/02/01 10:51:26 by user42           ###   ########.fr        #
+#    Updated: 2021/02/01 11:58:17 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -151,6 +151,9 @@ tclean: clean
 
 fclean: clean
 	@rm -rf $(NAME)
+
+norme:
+	norminette $(SRC_DIR) $(INC_DIR)
 
 re: aclean
 	@$(MAKE)

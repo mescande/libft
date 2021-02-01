@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/24 12:07:06 by mescande          #+#    #+#             */
-/*   Updated: 2021/01/31 03:00:16 by user42           ###   ########.fr       */
+/*   Updated: 2021/02/01 11:24:52 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ int		gestionstruct(t_buff *buff, int fd)
 	buff->fd = fd;
 	return (0);
 }
-
 
 int		get_next_line(const int fd, char **line)
 {

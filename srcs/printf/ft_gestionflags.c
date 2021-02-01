@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 13:30:42 by mescande          #+#    #+#             */
-/*   Updated: 2020/05/15 13:12:45 by user42           ###   ########.fr       */
+/*   Updated: 2021/02/01 11:25:54 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,10 @@ int		wichflag(int *flags)
 int		printit(t_plist *start)
 {
 	int		res;
-	int 	trash;
+	int		trash;
 	t_plist	*tmp;
 
-	(void) trash;
+	(void)trash;
 	res = 0;
 	while (start)
 	{

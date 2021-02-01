@@ -6,14 +6,12 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 16:15:18 by mescande          #+#    #+#             */
-/*   Updated: 2021/02/01 10:50:59 by user42           ###   ########.fr       */
+/*   Updated: 2021/02/01 11:47:36 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-# define SIGN(Value)	(Value < 0 ? -1 : 1)
 
 # include <string.h>
 

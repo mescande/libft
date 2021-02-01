@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 16:09:14 by mescande          #+#    #+#             */
-/*   Updated: 2020/10/26 16:15:56 by mescande         ###   ########.fr       */
+/*   Updated: 2021/02/01 11:27:11 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 static int		printme(int fd, t_plist *start)
 {
 	int		res;
-	int 	trash;
+	int		trash;
 	t_plist	*tmp;
 
-	(void) trash;
+	(void)trash;
 	res = 0;
 	while (start)
 	{
@@ -32,7 +32,7 @@ static int		printme(int fd, t_plist *start)
 	return (res);
 }
 
-int		ft_fprintf(int fd, const char *str, ...)
+int				ft_fprintf(int fd, const char *str, ...)
 {
 	t_plist	*lst;
 	t_plist	*start;
