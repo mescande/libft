@@ -6,7 +6,7 @@
 /*   By: mescande <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 16:15:18 by mescande          #+#    #+#             */
-/*   Updated: 2020/10/09 16:32:09 by user42           ###   ########.fr       */
+/*   Updated: 2021/02/01 10:50:59 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,6 @@ int				ft_isxdigit(int c);
 
 void			*ft_memrealloc(void *buff, size_t end, size_t init);
 void			ft_putstrstr(char **str);
+int				ft_strcount(char *str, char c);
 
 #endif

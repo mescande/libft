@@ -6,7 +6,7 @@
 #    By: mescande <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 14:03:19 by mescande          #+#    #+#              #
-#    Updated: 2021/01/16 12:40:58 by user42           ###   ########.fr        #
+#    Updated: 2021/02/01 10:51:26 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,6 +81,7 @@ SRC_LIST = chr/ft_isalnum.c\
 		   str/ft_strchr.c\
 		   str/ft_strclr.c\
 		   str/ft_strcmp.c\
+		   str/ft_strcount.c\
 		   str/ft_strcpy.c\
 		   str/ft_strdel.c\
 		   str/ft_strdup.c\
